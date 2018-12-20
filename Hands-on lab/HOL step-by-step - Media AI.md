@@ -950,7 +950,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 4.  Modify the **Run** method declaration to include the following "*dynamic inputDocument*" **parameter** and **DocumentDB** attribute.
 
     ```
-        [DocumentDB("learning", "videos", Id = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")] dynamic inputDocument,
+        [DocumentDB("learning", "videos", Id = "{documentId}", PartitionKey = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")] dynamic inputDocument,
     ```
 
 > The first 2 parameters of the **DocumentDB** attribute define to connect to the "*videos*" Cosmos DB Collection within the "*learning*" database. And the value of "*{documentId}*" will enable it to retrieve the Document whose ID is set to the same value of the "*documentId*" value passed into the method via the HTTP POST. The "*ConnectionStringSetting"* parameter sets the name of the App Setting that will store the Cosmos DB Connection String.
@@ -961,7 +961,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
         public static async Task<object> Run(
             [HttpTrigger]Input input,
             HttpRequestMessage req,
-            [DocumentDB("learning", "videos", Id = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")] dynamic inputDocument,
+            [DocumentDB("learning", "videos", Id = "{documentId}", PartitionKey = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")] dynamic inputDocument,
             TraceWriter log)
     ```
 
