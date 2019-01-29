@@ -169,7 +169,9 @@ In this exercise, you will set the import workflow for uploading and importing v
 3. On the **Create storage account** blade in the **Basics** tab, enter the following values:
 
     a.  Under **Subscription**, locate **Resource group** select **Create new**
-           ![The information above is entered and highlighted on the Create storage account blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.1.png "Configure the settings on the Create storage account blade")
+
+    ![The information above is entered and highlighted on the Create storage account blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.1.png "Configure the settings on the Create storage account blade")
+
     a.  Name: **enter a unique name**
 
     b.  Replication: **Locally-redundant storage (LRS)**
@@ -178,7 +180,7 @@ In this exercise, you will set the import workflow for uploading and importing v
 
     d.  Location: **Choose the location closest to you.**
 
-       ![The information above is entered and highlighted on the Create storage account blade, on the Basics tab.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.2.png "Configure the settings on the Create storage account blade, on the Basics tab.")
+    ![The information above is entered and highlighted on the Create storage account blade, on the Basics tab.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.2.png "Configure the settings on the Create storage account blade, on the Basics tab.")
 
 4. Select **Review + Create**, review the details then select **Create**.
        ![In the Create Storage blade, the Review + create tab and create button are selected.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.3.png "Review the settings on the Create storage account blade, on the Review + create tab.")
@@ -597,11 +599,11 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
 
 12. In the top navigation of the **Video Indexer API** Developer Portal, choose the **APIS** menu, then select **Video Indexer APIs -- Authorization**.
 
-   ![The APIS menu is highlighted and labeled 1 at the top of the Video Indexer developer portal, and Video Indexer APIs -- Authorization is highlighted and labeled 2 below.](images/Hands-onlabstep-by-step-MediaAIimages/media/image179.png "Select Video Indexer APIs -- Authorization")
+    ![The APIS menu is highlighted and labeled 1 at the top of the Video Indexer developer portal, and Video Indexer APIs -- Authorization is highlighted and labeled 2 below.](images/Hands-onlabstep-by-step-MediaAIimages/media/image179.png "Select Video Indexer APIs -- Authorization")
 
 13. Choose **API definition** to expand its menu.
 
-   ![The API definition button is highlighted on the top-right side of the Video Indexer developer portal, and the shortcut menu is open.](images/Hands-onlabstep-by-step-MediaAIimages/media/image180.png "Select API definition")
+    ![The API definition button is highlighted on the top-right side of the Video Indexer developer portal, and the shortcut menu is open.](images/Hands-onlabstep-by-step-MediaAIimages/media/image180.png "Select API definition")
 
 14. Right-click **Open API**, then choose **Copy link address** to copy the URL for the link to the clipboard.
 
@@ -609,7 +611,7 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
 
 15. Go back to Visual Studio, then within the Solution Explorer window, right-click the **ContosoLearning.Web.Admin** project, then choose **Add**, then **REST API Client...**
 
-   ![The ContosoLearning.Web.Admin project is selected, highlighted, and labeled 1 in Solution Explorer; Add is selected, highlighted, and labeled 2 in the shortcut menu; and REST API Client is selected, highlighted, and labeled 3 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image78.png "Add a REST API client")
+    ![The ContosoLearning.Web.Admin project is selected, highlighted, and labeled 1 in Solution Explorer; Add is selected, highlighted, and labeled 2 in the shortcut menu; and REST API Client is selected, highlighted, and labeled 3 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image78.png "Add a REST API client")
 
 16. Go back to Visual Studio, and paste in the copied **URL** into the **Swagger Url** field of the **Add REST API Client** dialog, set the **Client Namespace** to `ContosoLearning.Web.Admin.VideoIndexer.Authorization`, then select **OK**.
 
@@ -627,7 +629,6 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
         var video = await videoRepo.Get(id);
 
         await videoRepo.Delete(id);
-
 
         // ======================================================================
         // Delete files from Blob Storage
@@ -811,10 +812,10 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
 5.  Within the **Solution Explorer** pane, right-click the **FunctionApp** project, then select **Add**, then **New Item...**
 
-   ![The FunctionApp project is selected, highlighted, and labeled 2 in the Solution Explorer pane; Add is selected, highlighted, and labeled 3 in the shortcut menu; and New Item is selected, highlighted, and labeled 4 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image105.png "Select New Item")
+    ![The FunctionApp project is selected, highlighted, and labeled 2 in the Solution Explorer pane; Add is selected, highlighted, and labeled 3 in the shortcut menu; and New Item is selected, highlighted, and labeled 4 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image105.png "Select New Item")
 
 6.  In the **Add New Item** dialog, select the **Azure Function** file template, then choose **Add**.
- 
+
     ![Visual C\# Items is selected on the left side of the Add New Item dialog box; the Azure Function file template is selected, highlighted, and labeled 1 in the middle; and Add is highlighted and labeled 2 at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image106.png "Add the Azure Function file template")
 
 7.  On the **New Azure Function** dialog, select **Generic WebHook**, then choose **OK**.
@@ -829,7 +830,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
  
     ![Visual C\# Items is selected on the left side of the Add New Item dialog box; the Class template is selected, highlighted, and labeled 1 in the middle; Input.cs is highlighted and labeled 2 in the Name box below; and the Add button is highlighted at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image109.png "Add the Input.cs file")
 
-10.  In the code for the **Input.cs** class, update it to match the below **Input** class with the following two properties:
+10. In the code for the **Input.cs** class, update it to match the below **Input** class with the following two properties:
 
     ```
     public class Input
@@ -905,7 +906,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
 19. On the **Create App Service** dialog, select the **ContosoVideo** Resource Group, then choose **New...** next to the App Service Plan dropdown.
 
-   ![ContosoVideo is highlighted in the Resource Group box in the Create App Service dialog box, and New is highlighted next to the App Service Plan box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image112.png "Create a new App Service Plan for the ContosoVideo Resource Group")
+    ![ContosoVideo is highlighted in the Resource Group box in the Create App Service dialog box, and New is highlighted next to the App Service Plan box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image112.png "Create a new App Service Plan for the ContosoVideo Resource Group")
 
 20. On the Configure App Service Plan dialog, enter the following values, then choose **OK**:
 
@@ -963,7 +964,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 7.  Within **Solution Explorer**, right-click the **FunctionApp** project, then choose **Add**, then **Class...**
 
     ![The FunctionApp project is selected, highlighted, and labeled 1 in the Solution Explorer pane; Add is selected, highlighted, and labeled 2 in the shortcut menu; and Class is selected, highlighted, and labeled 3 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image118.png "Select Class")
-.
+
 8.  Within the **Add New Item** dialog, name the file "**VideoProcessingState.cs**", then select **Add**
 
     ![Visual C\# Items is selected on the left side of the Add New Item dialog box; the Class template is selected and highlighted in the middle; VideoProcessingState.cs is highlighted in the Name box below; and the Add button is highlighted at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image119.png "Add the VideoProcessingState.cs file")

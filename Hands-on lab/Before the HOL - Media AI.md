@@ -106,11 +106,10 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
 2.  In the **Search** box in the upper right of the dialog, type in **Azure Logic Apps** to search for the **Azure Logic Apps Tools for Visual Studio** extension. Then click **Download** on the Extension to install it.
 
     ![Search Results is highlighted on the left side of the Extensions and Updates dialog box, Azure Logic Apps is highlighted on the top right (labeled 1), and the Download button and the Azure Logic Apps Tools for Visual Studio extension (labeled 2) are selected and highlighted in the middle.](images/Setup/image11.png "Download Azure Logic Apps Tools for Visual Studio")
-    
 
 3.  Click **Close** on the **Extensions and Updated** dialog.
 
-![Search Results is highlighted on the left side of the Extensions and Updates dialog box, Azure Logic Apps Tools for Visual Studio is selected in the middle, and Close is highlighted on the bottom right.](images/Setup/image12.png "Close the Extensions and Updated dialog box")
+    ![Search Results is highlighted on the left side of the Extensions and Updates dialog box, Azure Logic Apps Tools for Visual Studio is selected in the middle, and Close is highlighted on the bottom right.](images/Setup/image12.png "Close the Extensions and Updated dialog box")
 
 4.  Close Visual Studio, the pending installation of the Azure Logic Apps Tools for Visual Studio will automatically launch.
 
