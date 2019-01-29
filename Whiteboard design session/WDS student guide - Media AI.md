@@ -9,10 +9,8 @@ Media AI
 </div>
 
 <div class="MCWHeader3">
-August 2018
+January 2019
 </div>
-
-
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -57,9 +55,9 @@ By the end of the whiteboard design session you will be better able to design me
 
 Analyze your customer’s needs.
 
-Timeframe: 15 minutes 
+Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips. 
+Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
 1.  Meet your table participants and trainer. 
 2.  Read all of the directions for steps 1–3 in the student guide. 
 3.  As a table team, review the following customer case study.
@@ -76,7 +74,7 @@ Because of this changing landscape of getting further into the IT training busin
 
 Mary Bowman, the Director of IT Operations for Contoso, has seen some demos of the media and video services within the Microsoft Azure platform. However, she still has several questions to answer before making a final decision on the technology and platforms to use for implementation. The Contoso IT Development and Engineering teams do not have much experience with building and maintaining video streaming services, so they are a bit uncertain of what path to take with the design and architecture at this point. In initial conversations with the sales team, Mary has said, "We have a tremendous amount of Enterprise IT experience within our organization, we just need a little help figuring out the unknowns here."
 
-### Customer needs 
+### Customer needs
 
 1.  The system must scale globally for their many clients all over the world, including new clients as Contoso grows their IT training business.
 
@@ -90,7 +88,7 @@ Mary Bowman, the Director of IT Operations for Contoso, has seen some demos of t
 
 6.  Use serverless compute where possible to minimize overall maintenance and overhead cost.
 
-### Customer objections 
+### Customer objections
 
 1.  Is there a service to automate transcription of the videos? Manual transcription is costly.
 
@@ -113,15 +111,15 @@ Mary Bowman, the Director of IT Operations for Contoso, has seen some demos of t
 
 ## Step 2: Design a proof of concept solution
 
-**Outcome** 
+**Outcome**
 
-Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart: 
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart:
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
 2.  What customer business needs do you need to address with your solution?
 
@@ -153,7 +151,7 @@ Present a solution to the target customer audience in a 15-minute chalk-talk for
 
 Timeframe: 30 minutes
 
-**Presentation** 
+**Presentation**
 
 Directions:
 1.  Pair with another table.
@@ -164,7 +162,7 @@ Directions:
 6.  The customer team gives feedback to the Microsoft team.
 7.  Tables switch roles and repeat Steps 2–6.
 
-##  Wrap-up 
+##  Wrap-up
 
 Timeframe: 15 minutes
 
