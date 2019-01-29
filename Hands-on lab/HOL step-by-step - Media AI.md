@@ -29,41 +29,41 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Media AI hands-on lab step-by-step](#media-ai-hands-on-lab-step-by-step)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Overview](#overview)
-    - [Solution architecture](#solution-architecture)
-    - [Requirements](#requirements)
-    - [Exercise 1: Signup for Video Indexer API service](#exercise-1-signup-for-video-indexer-api-service)
-        - [Task 1: Signup for Video Indexer](#task-1-signup-for-video-indexer)
-        - [Task 2: Copy Video Indexer API Key](#task-2-copy-video-indexer-api-key)
-        - [Task 3: Copy Video Indexer Account ID](#task-3-copy-video-indexer-account-id)
-    - [Exercise 2: Setup video import workflow](#exercise-2-setup-video-import-workflow)
-        - [Task 1: Create storage account for video files](#task-1-create-storage-account-for-video-files)
-        - [Task 2: Create Azure Logic App to process videos](#task-2-create-azure-logic-app-to-process-videos)
-    - [Exercise 3: Enable admin website to upload videos](#exercise-3-enable-admin-website-to-upload-videos)
-        - [Task 1: Provision Cosmos DB Account](#task-1-provision-cosmos-db-account)
-        - [Task 2: Integrate Cosmos DB into admin web app](#task-2-integrate-cosmos-db-into-admin-web-app)
-        - [Task 3: Integrate file upload into admin web app](#task-3-integrate-file-upload-into-admin-web-app)
-        - [Task 4: Add ability to delete video](#task-4-add-ability-to-delete-video)
-        - [Task 5: Deploy admin website to an Azure Web App](#task-5-deploy-admin-website-to-an-azure-web-app)
-        - [Task 6: Configure application settings](#task-6-configure-application-settings)
-    - [Exercise 4: Update video status when processing is complete](#exercise-4-update-video-status-when-processing-is-complete)
-        - [Step 1: Create Azure Function](#step-1-create-azure-function)
-        - [Step 2: Update Cosmos DB document with video processing state](#step-2-update-cosmos-db-document-with-video-processing-state)
-        - [Step 3: Update Video State when processing is complete](#step-3-update-video-state-when-processing-is-complete)
-    - [Exercise 5: Add video player to front-end application](#exercise-5-add-video-player-to-front-end-application)
-        - [Step 1: Integrate Cosmos DB into front-end application](#step-1-integrate-cosmos-db-into-front-end-application)
-        - [Step 2: Display video thumbnail image](#step-2-display-video-thumbnail-image)
-        - [Step 3: Add video player](#step-3-add-video-player)
-        - [Step 4: Add video insights](#step-4-add-video-insights)
-        - [Step 5: Integrate video player and insights together](#step-5-integrate-video-player-and-insights-together)
-        - [Step 6: Deploy public website to an Azure Web App](#step-6-deploy-public-website-to-an-azure-web-app)
-        - [Step 7: Configure application settings](#step-7-configure-application-settings)
-    - [Exercise 6: Test the application](#exercise-6-test-the-application)
-        - [Step 1: Upload video to admin website](#step-1-upload-video-to-admin-website)
-        - [Step 2: View video and insights in public website](#step-2-view-video-and-insights-in-public-website)
-    - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Delete resources](#task-1-delete-resources)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Overview](#overview)
+  - [Solution architecture](#solution-architecture)
+  - [Requirements](#requirements)
+  - [Exercise 1: Signup for Video Indexer API service](#exercise-1-signup-for-video-indexer-api-service)
+    - [Task 1: Signup for Video Indexer](#task-1-signup-for-video-indexer)
+    - [Task 2: Copy Video Indexer API Key](#task-2-copy-video-indexer-api-key)
+    - [Task 3: Copy Video Indexer Account ID](#task-3-copy-video-indexer-account-id)
+  - [Exercise 2: Setup video import workflow](#exercise-2-setup-video-import-workflow)
+    - [Task 1: Create storage account for video files](#task-1-create-storage-account-for-video-files)
+    - [Task 2: Create Azure Logic App to process videos](#task-2-create-azure-logic-app-to-process-videos)
+  - [Exercise 3: Enable admin website to upload videos](#exercise-3-enable-admin-website-to-upload-videos)
+    - [Task 1: Provision Cosmos DB Account](#task-1-provision-cosmos-db-account)
+    - [Task 2: Integrate Cosmos DB into admin web app](#task-2-integrate-cosmos-db-into-admin-web-app)
+    - [Task 3: Integrate file upload into admin web app](#task-3-integrate-file-upload-into-admin-web-app)
+    - [Task 4: Add ability to delete video](#task-4-add-ability-to-delete-video)
+    - [Task 5: Deploy admin website to an Azure Web App](#task-5-deploy-admin-website-to-an-azure-web-app)
+    - [Task 6: Configure application settings](#task-6-configure-application-settings)
+  - [Exercise 4: Update video status when processing is complete](#exercise-4-update-video-status-when-processing-is-complete)
+    - [Step 1: Create Azure Function](#step-1-create-azure-function)
+    - [Step 2: Update Cosmos DB document with video processing state](#step-2-update-cosmos-db-document-with-video-processing-state)
+    - [Step 3: Update Video State when processing is complete](#step-3-update-video-state-when-processing-is-complete)
+  - [Exercise 5: Add video player to front-end application](#exercise-5-add-video-player-to-front-end-application)
+    - [Step 1: Integrate Cosmos DB into front-end application](#step-1-integrate-cosmos-db-into-front-end-application)
+    - [Step 2: Display video thumbnail image](#step-2-display-video-thumbnail-image)
+    - [Step 3: Add video player](#step-3-add-video-player)
+    - [Step 4: Add video insights](#step-4-add-video-insights)
+    - [Step 5: Integrate video player and insights together](#step-5-integrate-video-player-and-insights-together)
+    - [Step 6: Deploy public website to an Azure Web App](#step-6-deploy-public-website-to-an-azure-web-app)
+    - [Step 7: Configure application settings](#step-7-configure-application-settings)
+  - [Exercise 6: Test the application](#exercise-6-test-the-application)
+    - [Step 1: Upload video to admin website](#step-1-upload-video-to-admin-website)
+    - [Step 2: View video and insights in public website](#step-2-view-video-and-insights-in-public-website)
+  - [After the hands-on lab](#after-the-hands-on-lab)
+    - [Task 1: Delete resources](#task-1-delete-resources)
 
 <!-- /TOC -->
 
@@ -122,21 +122,14 @@ In this exercise, you will setup the Video Indexer API within Microsoft Azure.
 
     ![The Authorization link is highlighted under Products.](images/Hands-onlabstep-by-step-MediaAIimages/media/image21.png "Select Authorization")
 
-7.  Select **Subscribe** to sign up for the free preview.
+7.  Select the **Product Authorization Subscription** created for you to view the subscription details
 
-    ![The Subscribe button is highlighted under free Preview.](images/Hands-onlabstep-by-step-MediaAIimages/media/image22.png "Sign up for the free preview")
+    ![The Product Authorization Subscription link text is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/image22.png "Product Authorization Subscription")
 
-8.  Check the "**I agree to the Terms of Use.**" Box, then choose **Confirm** to finish signing up for the Authorization product.
-
-    ![The 'I agree to the Terms of Use' check box is selected and highlighted, and the Confirm button is highlighted at the bottom of subscribe to product page.](images/Hands-onlabstep-by-step-MediaAIimages/media/image23.png "Finish signing up for the Authorization product")
-
-9.  You will now see the **free preview** subscription has been created for your account.
-
-    ![Free preview subscription information is displayed on the Video Indexer developer portal.](images/Hands-onlabstep-by-step-MediaAIimages/media/image24.png "View the free preview subscription")
 
 ### Task 2: Copy Video Indexer API Key
 
-1.  While on the **Profile** page of the **Video Indexer API**, locate the **Subscription details** for the **Authorization** subscription.
+1.  While on the **Profile** page of the **Video Indexer Developer Portal**, locate the **Subscription details** for the **Authorization** subscription.
 
 2.  Choose the **Show** link next to the **Primary key** to reveal the API key.
 
@@ -176,8 +169,10 @@ In this exercise, you will set the import workflow for uploading and importing v
 
     ![+New is highlighted and labeled 1 in the navigation pane of the Microsoft Azure portal; Storage is selected, highlighted, and labeled 2 in the middle; and Storage account is highlighted and labeled 3 on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image27.png "Select Storage account")
 
-3.  On the **Create storage account** blade, enter the following values:
+3.  On the **Create storage account** blade in the **Basics** tab, enter the following values:
 
+    a.  Under **Subscription**, locate **Resource group** select **Create new**
+           ![The information above is entered and highlighted on the Create storage account blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.1.png "Configure the settings on the Create storage account blade")
     a.  Name: **enter a unique name**
 
     b.  Replication: **Locally-redundant storage (LRS)**
@@ -186,10 +181,10 @@ In this exercise, you will set the import workflow for uploading and importing v
 
     d.  Location: **Choose the location closest to you.**
     
-       ![The information above is entered and highlighted on the Create storage account blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.png "Configure the settings on the Create storage account blade")
+       ![The information above is entered and highlighted on the Create storage account blade, on the Basics tab.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.2.png "Configure the settings on the Create storage account blade, on the Basics tab.")
 
-4.  Select **Create**.
-
+4.  Select **Review + Create**, review the details then select **Create**.
+       ![In the Create Storage blade, the Review + create tab and create button are selected.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.3.png "Review the settings on the Create storage account blade, on the Review + create tab.")
 5.  In the menu, choose **Resource groups**, then select the **ContosoVideo** Resource group, then pick the **Storage Account** that was just created.
 
     ![Resource groups is highlighted and labeled 1 in the navigation pane of the Microsoft Azure portal; the ContosoVideo Resource group is selected, highlighted, and labeled 2 to the right; Overview is selected to the right; and the Storage Account that was just created is highlighted and labeled 3 on the far right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image29.png "Select the Storage account")
@@ -265,15 +260,19 @@ In this exercise, you will set the import workflow for uploading and importing v
     ![Blob storage is entered in the search box in the Choose an action dialog box, and Azure Blob Storage -- Create SAS URI by path is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/image44.png "Add the Azure Blob Storage. Create SAS URI by path action")
 
 
-13. Select the **Blob path** field, then choose to insert the **Path** parameter into the field from the options that display. This will use the Path of the Blob from the Trigger as the value to use when creating the SAS URI in this Action.
+13. Select the **Blob path** field, then choose to insert the **List of Files Path** parameter into the field from the options that display. This will use the Path of the Blob from the Trigger as the value to use when creating the SAS URI in this Action.
 
     ![Path is highlighted in the Blob path box, and the Path parameter is highlighted among the displayed options.](images/Hands-onlabstep-by-step-MediaAIimages/media/image45.png "Select the Path parameter")
 
-14. Choose **+New step**, **Add an action**, and a new **Video Indexer -- Get Account Access Token** Action.
+14. Choose **+ New step**, **Add an action**, and a new **Video Indexer** then **Get Account Access Token** Action.
 
     ![Get account access token is entered in the search box in the choose an action dialog box, and Video Indexer -- get account access token is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/logicapps-action-video-indexer-get-account-access-token-select.png "Select the Video Indexer get account access token action")
 
-15. Enter the following values for the *Video Indexer -- Get account access token** Action:
+14. For Connection Name, enter **contosovideo-videoindexconnection** , for API Ksy, enter the API key from when the video index account was set up. Then click **Create**.
+       
+    ![Get account access token is entered in the search box in the choose an action dialog box, and Video Indexer -- get account access token is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/video_indexer_api_key.png "Select the Video Indexer get account access token action")
+
+1.  Enter the following values for the *Video Indexer -- Get account access token** Action:
 
     - Location: **trial**
     - Account ID: **Select your Video Indexer Account ID from the dropdown.**
@@ -281,19 +280,12 @@ In this exercise, you will set the import workflow for uploading and importing v
 
     ![Get account access token connector has properties configured.](images/Hands-onlabstep-by-step-MediaAIimages/media/logicapps-action-video-indexer-get-account-access-token-fields.png "Get access token connector has properties configured.")
 
-16. Choose **+New step**, **Add an action**, and a new **Video Indexer -- Upload video and index (using a URL)** Action.
+2.  Choose **+New step**, **Add an action**, and a new **Video Indexer -- Upload video and index (using a URL)** Action.
 
     ![Upload video and index is entered in the search box in the choose an action dialog box, and Video Indexer -- upload video and index (using a URL) is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/image46.png "Select the Video Indexer and upload video and index (using a URL) action")
 
-17. Enter the following values for the **Video Indexer -- Upload video and index (using a URL)** connection, then select **Create**:
 
-    - Connection Name: **nter a name for the connection**
-
-    - API Key: **Paste in the Video Indexer API Key that was copied previously**.
-
-    ![The values above are highlighted on the Video Indexer -- Upload video and index (using a URL) dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image47.png "Configure Video Indexer and upload video and index (using a URL) settings")
-
-18. Enter the following values for the **Video Indexer -- Upload video and index (using a URL)** action:
+3.  Enter the following values for the **Video Indexer -- Upload video and index (using a URL)** action:
 
     - Location: **trial**
     - Account ID: **Select your Video Indexer Account ID from the dropdown**.
@@ -309,19 +301,19 @@ In this exercise, you will set the import workflow for uploading and importing v
 
         ![Web Url is highlighted in the Video Url box, and the Web Url parameter is highlighted among the displayed options.](images/Hands-onlabstep-by-step-MediaAIimages/media/image48.png "Select the Web Url parameter")
 
-19. Save the Logic App.
+4.  Save the Logic App.
 
     ![The Save icon is selected.](images/Hands-onlabstep-by-step-MediaAIimages/media/image51.png "Save the Logic App")
 
-20. Within the **Solution Explorer** pane, right-click the **Resource Group Project**, choose **Deploy**, then select the **ContosoVideo** deployment.
+5.  Within the **Solution Explorer** pane, right-click the **Resource Group Project**, choose **Deploy**, then select the **ContosoVideo** deployment.
 
     ![The Resource Group Project is selected, highlighted, and labeled 1 in the Solution Explorer pane; Deploy is selected, highlighted, and labeled 2 in the shortcut menu; and ContosoVideo is selected, highlighted, and labeled 3 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image52.png "Select the ContosoVideo deployment")
 
-21. On the **Deploy to Resource Group** dialog, choose **Edit Parameters...**
+6.  On the **Deploy to Resource Group** dialog, choose **Edit Parameters...**
 
     ![The Edit Parameters button is highlighted in the Deploy to Resource Group dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image53.png "Select Edit Parameters")
 
-22. On the **Edit Parameters** dialog, enter the following values, then select **Save**:
+7.  On the **Edit Parameters** dialog, enter the following values, then select **Save**:
 
     - logicAppName: **enter a unique name for the Logic App**
 
@@ -333,11 +325,11 @@ In this exercise, you will set the import workflow for uploading and importing v
 
     ![The values above are highlighted in the Edit Parameters dialog box, and save is highlighted at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image54.png "Edit the parameters")
 
-23. On the **Deploy to Resource Group** dialog, choose **Deploy**.
+8.  On the **Deploy to Resource Group** dialog, choose **Deploy**.
 
     ![The Deploy button is highlighted in the Deploy to Resource Group dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image55.png "Select Deploy")
 
-24. Monitor the **Output** window, and wait for the deployment to complete.
+9.  Monitor the **Output** window, and wait for the deployment to complete.
 
     ![Successfully deployed is highlighted in the Output window.](images/Hands-onlabstep-by-step-MediaAIimages/media/image56.png "Watch the output window")
 
@@ -353,11 +345,11 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
 
     ![+Create a resource is highlighted and labeled 1 in the navigation pane of the Microsoft Azure portal; Databases is selected, highlighted, and labeled 2 in the middle; and Azure Cosmos DB is highlighted and labeled 3 on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image57.png "Select Azure Cosmos DB")
 
-2.  On the **Azure Cosmos DB New account** blade, enter the following values:
+2.  On the **Create Azure Cosmos DB account** blade in the **Basics** tab, enter or confirm the following values:
 
     - ID: **enter a unique name**
 
-    - API: **SQL**
+    - API: **Core SQL**
 
     - Resource Group: **ContosoVideo**
 
@@ -365,7 +357,7 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
   
     ![The values above are highlighted on the Azure Cosmos DB New account blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image58.png "Configure Azure Cosmos DB New account settings")
 
-3.  Choose **Create**.
+3.  Choose **Review + Create** then **Create**.
 
 4.  In the menu, select **Resource groups**, then select the **ContosoVideo** Resource group, then choose **Cosmos DB Account** that was just created.
  
@@ -385,7 +377,7 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
 
     - Collection Id: **videos**
 
-    - Storage capacity: **Fixed (10GB)**
+    - Partition Key: **videoId**
 
     - Throughput: **400**
 
@@ -463,7 +455,7 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
         return list;
     ```
 
-11. Notice that the above code references a **\_cosmosDbAuthInfo** object. This object is prepopulated with the necessary values for the Cosmos DB Account and Collection by loading from **AppSettings**. These AppSettings will be populated later.
+11. Notice that the above code references a **\_cosmosDbAuthInfo** object. This object is pre-populated with the necessary values for the Cosmos DB Account and Collection by loading from **AppSettings**. These AppSettings will be populated later.
 
 12. Replace the body of the **Get(string id)** method with the following code that will retrieve a single Document by ID.
 
@@ -471,7 +463,7 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
         using (var documentClient = this.createDocumentClient())
         {
             var response = await documentClient.ReadDocumentAsync<Video>(
-                UriFactory.CreateDocumentUri(_cosmosDbAuthInfo.Database, _cosmosDbAuthInfo.Collection, id)
+                UriFactory.CreateDocumentUri(_cosmosDbAuthInfo.Database, _cosmosDbAuthInfo.Collection, id), new RequestOptions() { PartitionKey = new PartitionKey(id) }
                 );
 
             return response.Document;
@@ -598,7 +590,7 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
 .
     ![The API definition button is highlighted on the top-right side of the Video Indexer developer portal, and the shortcut menu is open.](images/Hands-onlabstep-by-step-MediaAIimages/media/image80.png "Select API definition")
 
-10. Right-click **Open API**, then choose **Copy link address** to copy the URL for the link to the clipboard.
+10. Right-click **Open API 2 (JSON)**, then choose **Copy link address** to copy the URL for the link to the clipboard.
 
     ![Open API is highlighted and labeled 1 in the shortcut menu, and Copy link address is selected, highlighted, and labeled 2 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image81.png "Copy the URL for the link")
 
@@ -986,6 +978,8 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
         public class VideoProcessingState
         {
             public string state { get; set; }
+
+            public string ErrorType { get; set; }
         
             public videostate[] videos { get; set; }
     
@@ -1003,20 +997,20 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
     ```
     private static async Task<VideoProcessingState> GetVideoProcessingState(string videoId, TraceWriter log)
     {
-        var client = new HttpClient();
-
         // Request headers
-        string subscriptionKey = System.Configuration.ConfigurationManager.AppSettings["VideoIndexerAPI_Key"];
+        string subscriptionKey = Environment.GetEnvironmentVariable("VideoIndexerAPI_Key");//System.Configuration.ConfigurationManager.AppSettings["VideoIndexerAPI_Key"];
         client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
         // Get Video Indexer Account ID
-        var uriAccountsResponse = await client.GetAsync("https://api.videoindexer.ai/auth/trial/Accounts");
+        var uriAccountsResponse = await client.GetAsync("https://api.videoindexer.ai/auth/trial/Accounts?generateAccessTokens=true&allowEdit=true");
         var jsonUriAccountsResponse = await uriAccountsResponse.Content.ReadAsStringAsync();
         dynamic accounts = Newtonsoft.Json.Linq.JArray.Parse(jsonUriAccountsResponse);
         var videoIndexerAccountId = accounts[0].id;
+        var accessToken = accounts[0].accessToken;
 
         //Get Video Index
-        var uri = $"https://api.videoindexer.ai/trial/Accounts/{videoIndexerAccountId}/Videos/{videoId}/Index";
+        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+        var uri = $"https://api.videoindexer.ai/trial/Accounts/{videoIndexerAccountId}/Videos/{videoId}/Index?accessToken={accessToken}";
 
         var response = await client.GetAsync(uri);
 
@@ -1052,21 +1046,22 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ```
         log.Info($"Video Processing State: {processingState.state}");
-        log.Info($"Video Processing Progress: {processingState.progress}");
+        log.Info($"Video Processing Progress: {processingState.videos[0].processingProgress}");
 
         // Save Video Processing State in Cosmos DB Document
         inputDocument.processingState = processingState.state;
-        inputDocument.processingProgress = processingState.progress;
+        inputDocument.processingProgress = processingState.videos[0].processingProgress;
+
     ```
 
 15. The final **Run** method, should have the following:
 
     ```
-        [FunctionName("Function1")]
+       [FunctionName("Function1")]
         public static async Task<object> Run(
             [HttpTrigger]Input input,
             HttpRequestMessage req,
-            [DocumentDB("learning", "videos", Id = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")] dynamic inputDocument,
+            [DocumentDB(databaseName: "learning", collectionName: "videos", Id = "{documentId}", PartitionKey = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")]  dynamic inputDocument,
             TraceWriter log)
         {
             log.Info("Function triggered...");
@@ -1075,25 +1070,17 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
             log.Info($"DocumentId: {input.documentId}");
             log.Info($"VideoId: {input.videoId}");
 
-            if (inputDocument == null)
-            {
-                log.Error("'documentId' not found!");
-                return req.CreateResponse(HttpStatusCode.BadRequest, $"DocumentId ({input.documentId}) Not Found!");
-            }
-
             if (string.IsNullOrEmpty(input.videoId) || string.IsNullOrEmpty(input.documentId))
             {
                 log.Error("DocumentId and/or VideoId parameter missing!");
                 return req.CreateResponse(HttpStatusCode.BadRequest, $"Please pass a 'videoId' and 'documentId' in the Http request body");
             }
 
-
             // Save the Video Indexer 'videoId' to the Cosmos DB Document
             inputDocument.videoId = input.videoId;
 
             // Load Video Processing State
             dynamic processingState = await GetVideoProcessingState(input.videoId, log);
-
             if (!string.IsNullOrEmpty(processingState.ErrorType))
             {
                 log.Error($"{processingState.ErrorType}: {processingState.Message}");
@@ -1104,56 +1091,76 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
             }
 
             log.Info($"Video Processing State: {processingState.state}");
-            log.Info($"Video Processing Progress: {processingState.progress}");
+            log.Info($"Video Processing Progress: {processingState.videos[0].processingProgress}");
 
             // Save Video Processing State in Cosmos DB Document
             inputDocument.processingState = processingState.state;
-            inputDocument.processingProgress = processingState.progress;
+            inputDocument.processingProgress = processingState.videos[0].processingProgress;
 
             return req.CreateResponse(HttpStatusCode.OK, "Success");
         }
+
+        private static async Task<VideoProcessingState> GetVideoProcessingState(string videoId, TraceWriter log)
+        {
+            var client = new HttpClient();
+
+            // Request headers
+            string subscriptionKey = Environment.GetEnvironmentVariable("VideoIndexerAPI_Key");//System.Configuration.ConfigurationManager.AppSettings["VideoIndexerAPI_Key"];
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+
+            // Get Video Indexer Account ID
+            var uriAccountsResponse = await client.GetAsync("https://api.videoindexer.ai/auth/trial/Accounts?generateAccessTokens=true&allowEdit=true");
+            var jsonUriAccountsResponse = await uriAccountsResponse.Content.ReadAsStringAsync();
+            dynamic accounts = Newtonsoft.Json.Linq.JArray.Parse(jsonUriAccountsResponse);
+            var videoIndexerAccountId = accounts[0].id;
+            var accessToken = accounts[0].accessToken;
+
+            //Get Video Index
+            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+            var uri = $"https://api.videoindexer.ai/trial/Accounts/{videoIndexerAccountId}/Videos/{videoId}/Index?accessToken={accessToken}";
+
+            var response = await client.GetAsync(uri);
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            log.Info($"Processing State JSON: {content}");
+
+            return JsonConvert.DeserializeObject<VideoProcessingState>(content);
+        }
+
     ```
 
 16. Save the file.
 
-17. Within **Solution** Explorer, right-click the **Dependencies** node for the **Function App** project, then select **Add Reference**.
- 
-    ![The Dependencies node for the Function App project is selected, highlighted, and labeled 1 in the Solution Explorer pane, and Add Reference is selected, highlighted, and labeled 2 in the shortcut menu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image120.png "Select Add Reference")
-    
-
-18. In the **Reference Manager** dialog, search for and locate the **System.Configuration** assembly, select it, then choose **OK** to add a reference to this assembly within the project.
- 
-    ![System.Configuration is highlighted in the search box of the Reference Manager dialog box, System.Configuration is selected, highlighted, and labeled 2 below, and OK is highlighted at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image121.png "Search for and locate the System.Configuration assembly")
-
-19. Within **Solution Explorer**, right-click the **Function App** project, then choose **Publish...**
+17. Within **Solution Explorer**, right-click the **Function App** project, then choose **Publish...**
  
     ![The Function App project is selected, highlighted, and labeled 1 in Solution Explorer, and Publish is selected, highlighted, and labeled 2 in the shortcut menu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image122.png "Select Publish")
 
-20. Choose **Publish** to publish the latest version of the Function App to Azure.
+18. Choose **Publish** to publish the latest version of the Function App to Azure.
  
     ![The Publish button is highlighted next to the latest version of the Function App.](images/Hands-onlabstep-by-step-MediaAIimages/media/image123.png "Publish the latest version of the Function App")
 
-21. Wait for the Publish to complete. This should take about 1 minute.
+19. Wait for the Publish to complete. This should take about 1 minute.
 
-22. Open the **Azure Portal**, and navigate to the **Cosmos DB Account** that was previously created.
+20. Open the **Azure Portal**, and navigate to the **Cosmos DB Account** that was previously created.
 
-23. On the **Cosmos DB Account** blade, choose **Keys**.
+21. On the **Cosmos DB Account** blade, choose **Keys**.
  
     ![Keys is highlighted on the Cosmos DB Account blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image124.png "Select Keys")
 
-24. Copy the **PRIMARY CONNECTION STRING** for the Cosmos DB Account.
+22. Copy the **PRIMARY CONNECTION STRING** for the Cosmos DB Account.
  
     ![The PRIMARY CONNECTION STRING value for the Cosmos DB Account is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/image125.png "Copy the PRIMARY CONNECTION STRING")
 
-25. Navigate to the **ContosoVideo** Resource Group, then navigate to the **Azure Function** that was created and published from Visual Studio.
+23. Navigate to the **ContosoVideo** Resource Group, then navigate to the **Azure Function** that was created and published from Visual Studio.
 
     ![Overview is selected on the left side of the ContosoVideo Resource Group, and the Azure Function that was created and published from Visual Studio is highlighted on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image126.png "Select the Azure Function")
 
-26. On the **Azure Function** blade, choose **Application settings** under the Configured features section.
+24. On the **Azure Function** blade, choose **Application settings** under the Configured features section.
 
     ![Application settings is highlighted in the Configured features section of the Azure Function blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image127.png "Select Application settings")
 
-27. Scroll down, and add a new **Application setting** with the following values:
+25. Scroll down, and add a new **Application setting** with the following values:
 
     - Name: **contosovideodb\_DOCUMENTDB**
 
@@ -1161,7 +1168,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ![The values above are highlighted under Application settings.](images/Hands-onlabstep-by-step-MediaAIimages/media/image128.png "Add a new Application setting")
 
-28. Add another **Application setting** with the following values:
+26. Add another **Application setting** with the following values:
 
     - Name: **VideoIndexerAPI\_Key**
 
@@ -1169,7 +1176,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ![The values above are displayed under Application settings.](images/Hands-onlabstep-by-step-MediaAIimages/media/image129.png "Add another Application setting")
 
-29. Go back up and select **Save**.
+27. Go back up and select **Save**.
 
     ![This is a screenshot of the Save icon.](images/Hands-onlabstep-by-step-MediaAIimages/media/image130.png "Select Save")
 
@@ -1181,19 +1188,28 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
  
     ![+ New step is visible under the Video Indexer -- Upload video and index (using a URL) action at the end of the Workflow.](images/Hands-onlabstep-by-step-MediaAIimages/media/image131.png "Locate the end of the Workflow")
 
-3.  Select **+New step**, then **More**, then **Add a do until.** This will be used to periodically check the video processing state, and wait until it's finished before moving on with the workflow.
+3.  Select **+New step**
 
-    ![+ New step is highlighted and labeled 1; More is selected, highlighted, and labeled 2; and Add a do until is selected, highlighted, and labeled 3 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image132.png "Select Add a do until")
+    ![+ New step is highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/newstep.png "Select Add a do until")
 
-4.  Within the **Until** action, choose the **Add an action** link to add an action within the "do until" block.
+4.  Select **Control**
+
+    ![Control button is highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/Control.png "Select Add a do until")
+
+5.  Select **Until**. This will be used to periodically check the video processing state, and wait until it's finished before moving on with the workflow.
+
+    ![Until button is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/Control-Until.png "Select Add a do until")
+
+
+6.  Within the **Until** action, choose the **Add an action** link to add an action within the "until" block.
 
     ![Add an action is highlighted at the bottom of the Until dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image133.png "Select Add an action")
 
-5.  Search for and add a **Video Indexer -- Get Video Index** action.
+7.  Search for and add a **Video Indexer -- Get Video Index** action.
  
     ![Get processing state is highlighted in the search box of the Choose an action dialog box, and the Video Indexer -- Get Video Index action is highlighted under Actions.](images/Hands-onlabstep-by-step-MediaAIimages/media/image134.png "Add a Video Indexer. Get processing state action")
 
-6.  On the **Get Video Index** action, enter the following values:
+8.  On the **Get Video Index** action, enter the following values:
 
     - Location: **trial**
     - Accoutn ID: **Select your Video Indexer Account ID**.
@@ -1205,31 +1221,31 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ![Set the Access Token parameter equal to the value of the Access Token returned by the Get Account Access Token action](images/Hands-onlabstep-by-step-MediaAIimages/media/image182.png "Enter the Access Token parameter value")
 
-7.  At the top of the **Until** action, set the check condition to look at the **State** parameter from the **Get Video Index** action and compare that it **is equal to** the value of **Processed**.
+9.  At the top of the **Until** action, set the check condition to look at the **State** parameter from the **Get Video Index** action and compare that it **is equal to** the value of **Processed**.
 
     ![The values above are displayed on the Until action.](images/Hands-onlabstep-by-step-MediaAIimages/media/image136.png "Configure Until action settings")
 
     ![The values above are displayed on the Until action.](images/Hands-onlabstep-by-step-MediaAIimages/media/image183.png "State is equal to Processed")
 
-8.  Choose **Add an action** to add another action within the **Until** action, after the **Get processing state** action.
+10. Choose **Add an action** to add another action within the **Until** action, after the **Get processing state** action.
 
     ![Add an action is highlighted at the bottom of the Until dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image137.png "Select Add an action")
 
     > NOTE: The Processing State is being polled here so it can easily be added to the database so the percentage complete can be displayed to the end-user within the web app more easily. Without this feature, the best practice would be to configure a callback with the initial Video Indexer call, so it can asynchronously notify when processing is completed.
 
-9.  Choose **Azure Functions Connector**.
+11. Choose **Azure Functions Connector**.
 
     ![The Azure Functions icon is highlighted under Connectors in the Choose an action dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image138.png "Select the Azure Functions Connector")
 
-10. Choose the **Azure Functions** action for the Azure Functions that was previously created.
+12. Choose the **Azure Functions** action for the Azure Functions that was previously created.
 
     ![Azure Functions is highlighted under Actions in the Azure Functions dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image139.png "Select the Azure Functions Action")
 
-11. For the Azure Functions action, select the **Azure Function** name that was created previously.
+13. For the Azure Functions action, select the **Azure Function** name that was created previously.
 
     ![Azure Functions is highlighted under Actions in the Azure Functions dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image140.png "Select the Azure Functions name")
 
-12. Update the **Request Body** field for the Azure Functions Action to contain a JSON object that includes **documentId** and **videoId** values.
+14. Update the **Request Body** field for the Azure Functions Action to contain a JSON object that includes **documentId** and **videoId** values.
 
     ```
     {"documentId": "", "videoId": "" }
@@ -1237,7 +1253,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ![The values above are in the Request Body box for the Azure Functions Action.](images/Hands-onlabstep-by-step-MediaAIimages/media/image141.png "Update the Request Body box")
 
-13. Modify the JSON properties to have the following values. Also, be sure to remove the empty double quotes ("") from the JSON when adding the new property values as shown below.
+15. Modify the JSON properties to have the following values. Also, be sure to remove the empty double quotes ("") from the JSON when adding the new property values as shown below.
 
     - Set the **documentId** property to the **Name** parameter from the **Blob Storage -- When one or more blobs are added or modified (metadata only)** action.
  
@@ -1247,15 +1263,19 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
  
     ![The Video Id parameter of the documentId property is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/image143.png "Select the Video Id parameter")
 
-14. Choose **Add an action** to add another action within the **Until** action, after the Azure Functions Action.
+16. Choose **Add an action** to add another action within the **Until** action, after the Azure Functions Action.
 
     ![Add an action is highlighted at the bottom of the Until dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image144.png "Select Add an action")
 
-15. Search for and add a **Schedule -- Delay** action.
+17. Search for **delay** and select the **Schedule** action.
 
-    ![Delay is entered in the search box in the Choose an action dialog box, and Schedule -- Delay is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/image145.png "Add the Schedule: Delay action")
+    ![Delay is entered in the search box in the Choose an action dialog box, and Schedule -- Schedule is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/Schedule.png "Add the Schedule: Delay action")
 
-16. On the **Delay** action, enter the following values:
+17. Search for and add a **Schedule -- Delay** action.
+
+    ![Delay is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/Delay.png "Add the Schedule: Delay action")
+
+18. On the **Delay** action, enter the following values:
 
     - Count: **30**
 
@@ -1263,15 +1283,17 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
  
     ![The values above are highlighted on the Delay action.](images/Hands-onlabstep-by-step-MediaAIimages/media/image146.png "Configure Delay action settings")
 
-17. Scroll down to the bottom or end of the Logic App Workflow, and choose **+New step**, then select **Add an action**.
+19. Scroll down to the bottom or end of the Logic App Workflow, and choose **+New step**, then select **Add an action**.
 
-    ![+ New step is highlighted at the end of the Logic App Workflow, and Add an action is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/image147.png "Add an action")
+    ![+ New step is highlighted at the end of the Logic App Workflow](images/Hands-onlabstep-by-step-MediaAIimages/media/image147.png "New Step")
 
-18. Add another **Azure Functions Action** here that is configured identical to the one previously created within the **Until** loop action. The reason for this is the first one within the **Until** action will periodically update the status of the Video Processing within the Cosmos DB document with each iteration of the loop. This new Azure Function at the end of the Logic App Workflow will update the Video Processing State one final time before the Workflow finished execution.
+20. Add another **Azure Functions Action** here that is configured identical to the one previously created within the **Until** loop action. The reason for this is the first one within the **Until** action will periodically update the status of the Video Processing within the Cosmos DB document with each iteration of the loop. This new Azure Function at the end of the Logic App Workflow will update the Video Processing State one final time before the Workflow finished execution.
+    
+    ![Azure Function Action is shown](images/Hands-onlabstep-by-step-MediaAIimages/media/function2.png "Azure Function")
 
-19. **Save** the Logic App.
+21. **Save** the Logic App.
 
-20. **Deploy** the updated Logic App to Azure.
+22. **Deploy** the updated Logic App to Azure.
 
 ## Exercise 5: Add video player to front-end application
 
@@ -1357,13 +1379,14 @@ In this exercise, you will extend the Front-End Application foundation to includ
     // Get Video Indexer Account ID
     var uriAccountsResponse = await client.GetAsync("https://api.videoindexer.ai/auth/trial/Accounts");
     var jsonUriAccountsResponse = await uriAccountsResponse.Content.ReadAsStringAsync();
-    // There seems to be a bug in Video Indexer API ?? that returns 401 responses here...
+
     dynamic accounts = Newtonsoft.Json.Linq.JArray.Parse(jsonUriAccountsResponse);
     var videoIndexerAccountId = accounts[0].id;
 
 
     foreach (var v in model.Videos)
     {
+        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", System.Configuration.ConfigurationManager.AppSettings["VideoIndexerAPI_Key"]);
         // Get Video Indexer Access Token
         var uriResponse = await client.GetAsync($"https://api.videoindexer.ai/auth/trial/Accounts/{videoIndexerAccountId}/Videos/{v.Video.VideoId}/AccessToken");
         var jsonUriResponse = await uriResponse.Content.ReadAsStringAsync();
@@ -1376,7 +1399,7 @@ In this exercise, you will extend the Front-End Application foundation to includ
         dynamic breakdown = Newtonsoft.Json.Linq.JObject.Parse(json);
 
         var thumbnailId = breakdown?.summarizedInsights?.thumbnailId;
-        v.ThumbnailUrl = $"https://api.videoindexer.ai/trial/Accounts/{videoIndexerAccountId}/Videos/{v.Video.VideoId}/Thumbnails/{thumbnailId}?accessToken={accessToken}";
+        v.ThumbnailUrl = $"https://api.videoindexer.ai/trial/Accounts/{videoIndexerAccountId}/Videos/{v.Video.VideoId}/Thumbnails/{thumbnailId}?accessToken={accessToken}&format=Jpeg";
     }
     ```
 

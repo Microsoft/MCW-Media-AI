@@ -27,9 +27,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Requirements](#requirements)
-- [Before the hands-on lab](#before-the-hands-on-lab)
-    - [Prerequisites](#prerequisites)
+- [Media AI before the hands-on lab setup guide](#media-ai-before-the-hands-on-lab-setup-guide)
+  - [Requirements](#requirements)
+  - [Before the hands-on lab](#before-the-hands-on-lab)
     - [Task 1: Configure a development environment](#task-1-configure-a-development-environment)
     - [Task 2: Disable IE enhanced security](#task-2-disable-ie-enhanced-security)
     - [Task 3: Update Visual Studio Tools for Azure Functions](#task-3-update-visual-studio-tools-for-azure-functions)
