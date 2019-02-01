@@ -47,7 +47,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 6: Configure application settings](#task-6-configure-application-settings)
   - [Exercise 4: Update video status when processing is complete](#exercise-4-update-video-status-when-processing-is-complete)
     - [Step 1: Create Azure Function](#step-1-create-azure-function)
-    - [Step 2: Update Cosmos DB document with video processing state](#step-2-update-cosmos-db-document-with-video-processing-state)
     - [Step 3: Update Video State when processing is complete](#step-3-update-video-state-when-processing-is-complete)
   - [Exercise 5: Add video player to front-end application](#exercise-5-add-video-player-to-front-end-application)
     - [Step 1: Integrate Cosmos DB into front-end application](#step-1-integrate-cosmos-db-into-front-end-application)
@@ -796,41 +795,67 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
 ### Step 1: Create Azure Function
 
-1.  Open **Visual Studio 2017**.
+1.  Open **Azure Portal**.
 
-2.  Select the **File** menu, then **Project...**
+2.  Select the **Create a Resource**, **Compute** then **Function App**
  
-    ![File is highlighted and labeled 1 in Visual Studio 2017; New is selected, highlighted, and labeled 2 in the submenu; and Project is selected, highlighted, and labeled 3 in the submenu to the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image34.png "Create a new project in Visual Studio 2017")
+    ![Create Resource, Compute, and Function app are highlighted and numbered.](images/Hands-onlabstep-by-step-MediaAIimages/media/image34.png "Create a new function in Azure Portal")
 
-3.  On the **New Project** dialog, select the **Cloud** category underneath **Visual C\#**, then select the **Azure Function** project template, then choose **OK**.
+3.  On the **Function App Create** dialog, Fill in the following fields.
+    1.  App Name: **contosovideofunction** 
+    2.  Resource Group: **Use existing** then select **ContosoVideo**
+    3.  Location: Use the **same location** as the other apps.
+    4.  Storage: **Use existing**and select **contosovideostorage**
+
+    click **Create**
  
     ![Cloud is highlighted and labeled 1 on the left side of the New Project dialog box; the Azure Functions project template is selected, highlighted, and labeled 2 in the middle; and OK is highlighted and labeled 3 at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image104.png "Select the Azure Functions project template")
 
-4. on the **New Project - FunctionApp** dialog, select the **Empty** template, then click **OK**.
+4. Click on  **Resource Groups**, then on **ContosoVideo**, then click the new function app **contosovideofunction** to open the resource.
 
-    ![The Empty Function App template is highlighted and labeled 1 on the left side of the New Project - FunctionApp dialog box; and labeled 2 is the OK button.](images/Hands-onlabstep-by-step-MediaAIimages/image182.png "Select Empty Functions App template")
+    ![Resource Group, ContosoVideo, and ContosoFunctionApp are highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/image182.png "Select the new function app")
 
-5.  Within the **Solution Explorer** pane, right-click the **FunctionApp** project, then select **Add**, then **New Item...**
+5.  Within the **contosovideofunction** pane, click **Function app settings** to configure the function app.
 
-    ![The FunctionApp project is selected, highlighted, and labeled 2 in the Solution Explorer pane; Add is selected, highlighted, and labeled 3 in the shortcut menu; and New Item is selected, highlighted, and labeled 4 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image105.png "Select New Item")
+    ![The FunctionApp project is selected, the Function app settings are highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/image105.png "Select Function app settings")
 
-6.  In the **Add New Item** dialog, select the **Azure Function** file template, then choose **Add**.
+6.  In the **Runtime version** section, select the **~1** option
 
-    ![Visual C\# Items is selected on the left side of the Add New Item dialog box; the Azure Function file template is selected, highlighted, and labeled 1 in the middle; and Add is highlighted and labeled 2 at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image106.png "Add the Azure Function file template")
+    ![Runtime version ~1 is selected.](images/Hands-onlabstep-by-step-MediaAIimages/media/image106.png "Select the runtime version")
 
-7.  On the **New Azure Function** dialog, select **Generic WebHook**, then choose **OK**.
+7.  On the same window, click **+** sign to open  **New Azure Function** dialog.
 
     ![Generic WebHook is selected and highlighted in the New Azure Function dialog box, and OK is highlighted at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image107.png "Select Generic WebHook")
 
-8.  Within the **Solution Explorer** pane, right-click the **FunctionApp** project, choose **Add**, then **Class...**
- 
-    ![The FunctionApp project is selected, highlighted, and labeled 1 in the Solution Explorer pane; Add is selected, highlighted, and labeled 2 in the shortcut menu; and Class is selected, highlighted, and labeled 3 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image108.png "Select Class")
+8.  Within the **Get Started** pane, locate and click the **Custom Function** link.
+9.  
+    ![The Custom function link is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/image108.png "Select Custom function")
 
-9.  In the **Add New Item** dialog, select the **Class** template, then name the file **Input.cs**, then choose **Add**.
+10. In the **Choose Template** pane, locate the **HTTP Trigger** template, click on **C#** to create the template.
  
-    ![Visual C\# Items is selected on the left side of the Add New Item dialog box; the Class template is selected, highlighted, and labeled 1 in the middle; Input.cs is highlighted and labeled 2 in the Name box below; and the Add button is highlighted at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image109.png "Add the Input.cs file")
+    ![HTTP trigger template with C# highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/image109.png "CLick the C# option in HTTP trigger")
 
-10. In the code for the **Input.cs** class, update it to match the below **Input** class with the following two properties:
+10. In the **HTTP trigger** pane, under **New Function**, Name the function Function1 and click **Create**.
+    
+    ![HTTP trigger template with C# highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/image1099.png "CLick the C# option in HTTP trigger")
+
+11. In the code for the **FUnction1**  above the run method, update the using statements to match the code below.
+
+    ```
+    #r "Microsoft.Azure.Documents.Client"
+    #r "Microsoft.Azure.WebJobs.Extensions.DocumentDB"
+    #r "Microsoft.Azure.WebJobs"
+    #r "Microsoft.Azure.WebJobs.Host"
+    #r "Newtonsoft.Json"
+
+    using System;
+    using System.Net;
+    using Newtonsoft.Json;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.WebJobs;
+    ```
+
+12. below the code for the **Run** method, add the class below **Input** with the following two properties:
 
     ```
     public class Input
@@ -840,20 +865,99 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
     }
     ```
 
-11. Save the file.
+13. Save the file.
 
-12. Open the **Function1.cs** file for the new Function that was previously created.
+14. On the right side of the pane select **View files**.
+    
+    ![View files highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/view_files.png "CLick View files")
+    
+15. Select **function.json** to view the bindings
+    
+    ![function.json highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/open_function.png "CLick the function.json")
 
-13. Update signature of the **Run** method to contain an **input** parameter of type **Input**. This will allow the Azure Function to automatically pull in the parameter values (documentId, videoId) that are passed in through the Request Body and parse them into this Input parameter value.
+16. In the function.json code add the following section
+    ```
+         ,
+        {
+        "name": "inputDocument",
+        "type": "documentDB",
+        "id": "tempValue",
+        "partitionKey": "tempValue",
+        "databaseName": "learning",
+        "collectionName": "videos",
+        "createIfNotExists": false,
+        "connection": "contosovideodb_DOCUMENTDB",
+        "direction": "out"
+        }
+    ```
+    The bindings should now look like this
+    ```
+        {
+        "bindings": [
+            {
+            "authLevel": "function",
+            "name": "req",
+            "type": "httpTrigger",
+            "direction": "in",
+            "methods": [
+                "get",
+                "post"
+            ]
+            },
+            {
+            "name": "$return",
+            "type": "http",
+            "direction": "out"
+            },
+            {
+            "name": "inputDocument",
+            "type": "documentDB",
+            "id": "tempValue",
+            "partitionKey": "tempValue",
+            "databaseName": "learning",
+            "collectionName": "videos",
+            "createIfNotExists": false,
+            "connection": "contosovideodb_DOCUMENTDB",
+            "direction": "out"
+            }
+        ],
+        "disabled": false
+        }
+    ```
+16. Save the file.
+
+17. Click the **run.csx** file to return to the C# code.
+    
+    ![function.json highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/open_csharp_code.png "CLick the function.json")
+
+18. Update signature of the **Run** method to contain an **binder** parameter of type **Binder**. This also adds the **DocumentDb** attributes to the binding we just added in the **JSON** file. **Binding** will allow the Azure Function to bind the DocumentDb document with incoming values amd update the status of the process from Video Indexer.
+
+    > The first 2 parameters of the **DocumentDB** attribute define to connect to the "*videos*" Cosmos DB Collection within the "*learning*" database. And the value of "*{documentId}*" will enable it to retrieve the Document whose ID is set to the same value of the "*documentId*" value passed into the method via the HTTP call. The "*ConnectionStringSetting"* parameter sets the name of the App Setting that will store the Cosmos DB Connection String.
+    ```
+    public static async Task<object> Run(Binder binder,
+        HttpRequestMessage req,
+        [DocumentDB(databaseName: "learning", collectionName: "videos", Id = "{documentId}", PartitionKey = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")]  dynamic inputDocument,
+        TraceWriter log)
+    ```
+
+19. Add the code to get the query string values and bind the incoming values to the DocumentDb document **inputDocument**, and to save the **input.VideoId** indexer id to the document.
 
     ```
-        public static async Task<object> Run(
-            [HttpTrigger]Input input,
-            HttpRequestMessage req,
-            TraceWriter log)
+        Input input = new Input
+    {
+        DocumentId = req.GetQueryNameValuePairs().FirstOrDefault(q => string.Compare(q.Key, "documentId", true) == 0).Value,
+        VideoId = req.GetQueryNameValuePairs().FirstOrDefault(q => string.Compare(q.Key, "videoId", true) == 0).Value
+    };
+        inputDocument = await binder.BindAsync<Object>(new DocumentDBAttribute("learning", "videos")
+    {
+        ConnectionStringSetting = "contosovideodb_DOCUMENTDB",
+        Id = input.DocumentId,
+        PartitionKey = input.DocumentId
+    });
+        // Save the Video Indexer 'videoId' to the Cosmos DB Document
+        inputDocument.videoId = input.VideoId;
     ```
-
-14. Replace the body of the **Run** method with the following code that checks the necessary parameters are passed in to the method:
+20. Replace the return code of the **Run** method with the following code that checks the necessary parameters are passed in to the method:
 
     ```
         log.Info("Function triggered...");
@@ -870,132 +974,33 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
         return req.CreateResponse(HttpStatusCode.OK, "Success");
     ```
 
-15. The resulting **Run** method should have the following code:
-
+21. Add a helper model class **VideoProcessingState** to get the values from the **Video Indexer** at the very end of the file.
     ```
-        [FunctionName("Function1")]
-        public static async Task<object> Run(
-            [HttpTrigger]Input input,
-            HttpRequestMessage req,
-            TraceWriter log)
+    public class VideoProcessingState
+    {
+        public string state { get; set; }
+
+        public string ErrorType { get; set; }
+
+        public string Message {get; set;}
+
+        public videostate[] videos { get; set; }
+
+        public class videostate
         {
-            log.Info("Function triggered...");
-
-            // Log the parameters passed in through the Request Body
-            log.Info($"DocumentId: {input.documentId}");
-            log.Info($"VideoId: {input.videoId}");
-
-            if (string.IsNullOrEmpty(input.videoId) || string.IsNullOrEmpty(input.documentId))
-            {
-                log.Error("DocumentId and/or VideoId parameter missing!");
-                return req.CreateResponse(HttpStatusCode.BadRequest, $"Please pass a 'videoId' and 'documentId' in the Http request body");
-            }
-
-            return req.CreateResponse(HttpStatusCode.OK, "Success");
+            public string processingProgress { get; set; }
         }
-    ```
-16. Save the source code files.
-
-17. Within the **Solution Explorer** pane, right-click the **Function App** project, then select **Publish**.
-
-    ![The Function App project is selected, highlighted, and labeled 1 in Solution Explorer, and Publish is selected, highlighted, and labeled 2 in the shortcut menu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image110.png "Select Publish")
-
-18. Select **Azure Function App** under Publish, then select **Create New**, then choose **Publish**.
-
-    ![Azure Function App is selected and highlighted under Publish, the Create New radio button is selected and highlighted, and the Publish button is highlighted at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image111.png "Create a new Azure Function App")
-
-19. On the **Create App Service** dialog, select the **ContosoVideo** Resource Group, then choose **New...** next to the App Service Plan dropdown.
-
-    ![ContosoVideo is highlighted in the Resource Group box in the Create App Service dialog box, and New is highlighted next to the App Service Plan box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image112.png "Create a new App Service Plan for the ContosoVideo Resource Group")
-
-20. On the Configure App Service Plan dialog, enter the following values, then choose **OK**:
-
-    - Location: **Choose the same location you used for the rest of the lab**.
-
-    - Size: **Consumption**
-
-    ![The information above is entered and highlighted in the Configure App Service Plan dialog box, and OK is highlighted on the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image113.png "Configure App Service Plan settings")
-
-21. Choose **Create**.
-
-    ![The Create button is highlighted at the bottom of the Create App Service dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image114.png "Select Create")
-
-22. Wait for the publish to complete. This should take about 1 minute to complete. You can monitor the **Output** window until it's completed.
-
-    ![The Publish Succeeded message is highlighted in the Output window.](images/Hands-onlabstep-by-step-MediaAIimages/media/image115.png "Monitor the publishing")
-
-### Step 2: Update Cosmos DB document with video processing state
-
-1.  With the **Function App** still open in Visual Studio, right-click on the **Function App**, then choose **Manage NuGet Packages...**
- 
-    ![Function App is selected, highlighted, and labeled 1 in Visual Studio, and Manage NuGet Packages is selected, highlighted, and labeled 2 in the shortcut menu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image116.png "Select Manage NuGet Packages")
-
-2.  Search for, and install the **Microsoft.Azure.WebJobs.Extensions.DocumentDB** NuGet package. Be sure to select **Version 1.0.0** to install. Do NOT choose the latest version, as it will not install due to a version conflict.
-
-    ![Microsoft.Azure.WebJobs.Extensions.DocumentDB is highlighted in the NuGet package search box, Microsoft.Azure.WebJobs.Extensions.DocumentDB is highlighted below it, and Version 1.0.0 and the Install button are highlighted on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image117.png "Install the Microsoft.Azure.WebJobs.Extensions.DocumentDB NuGet package")
-
-3.  Open the **Function1.cs** file for the Azure Function code.
-
-4.  Modify the **Run** method declaration to include the following "*dynamic inputDocument*" **parameter** and **DocumentDB** attribute.
-
-    ```
-        [DocumentDB("learning", "videos", Id = "{documentId}", PartitionKey = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")] dynamic inputDocument,
-    ```
-
-    > The first 2 parameters of the **DocumentDB** attribute define to connect to the "*videos*" Cosmos DB Collection within the "*learning*" database. And the value of "*{documentId}*" will enable it to retrieve the Document whose ID is set to the same value of the "*documentId*" value passed into the method via the HTTP POST. The "*ConnectionStringSetting"* parameter sets the name of the App Setting that will store the Cosmos DB Connection String.
-
-5.  Now, the full **Run** method signature should look as follows:
-
-    ```
-        public static async Task<object> Run(
-            [HttpTrigger]Input input,
-            HttpRequestMessage req,
-            [DocumentDB("learning", "videos", Id = "{documentId}", PartitionKey = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")] dynamic inputDocument,
-            TraceWriter log)
-    ```
-
-6.  Immediately before the fine **return** statement of the **Run** method, insert the following line of code that will update the **videoId** property of the Cosmos DB Document to contain the videoId that is passed into the Function.
-
-    ```
-        // Save the Video Indexer 'videoId' to the Cosmos DB Document
-        inputDocument.videoId = input.videoId;
-    ```
-
-7.  Within **Solution Explorer**, right-click the **FunctionApp** project, then choose **Add**, then **Class...**
-
-    ![The FunctionApp project is selected, highlighted, and labeled 1 in the Solution Explorer pane; Add is selected, highlighted, and labeled 2 in the shortcut menu; and Class is selected, highlighted, and labeled 3 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image118.png "Select Class")
-
-8.  Within the **Add New Item** dialog, name the file "**VideoProcessingState.cs**", then select **Add**
-
-    ![Visual C\# Items is selected on the left side of the Add New Item dialog box; the Class template is selected and highlighted in the middle; VideoProcessingState.cs is highlighted in the Name box below; and the Add button is highlighted at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image119.png "Add the VideoProcessingState.cs file")
-
-9.  Replace the autogenerated **VideoProcessingState** class stub with the following code:
-
-    ```
-        public class VideoProcessingState
-        {
-            public string state { get; set; }
-
-            public string ErrorType { get; set; }
-        
-            public videostate[] videos { get; set; }
-    
-            public class videostate
-            {
-                public string processingProgress { get; set; }
-            }
-        }
-    ```
-
-10. Save the file.
-
-11. Open the **Function.cs** code file, and paste in the following **GetVideoProcessingState** method below the **Run** method:
-
+    }
+    ``` 
+22. Add a method that uses the VideoProcessingState class and connects to **Video Indexer** just below the **Run** method's ending bracket.
     ```
     private static async Task<VideoProcessingState> GetVideoProcessingState(string videoId, TraceWriter log)
     {
+        var client = new HttpClient();
+
         // Request headers
         string subscriptionKey = Environment.GetEnvironmentVariable("VideoIndexerAPI_Key");//System.Configuration.ConfigurationManager.AppSettings["VideoIndexerAPI_Key"];
+           log.Info($"Video Index API Keys: {subscriptionKey}");
         client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
         // Get Video Indexer Account ID
@@ -1018,74 +1023,48 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
         return JsonConvert.DeserializeObject<VideoProcessingState>(content);
     }
     ```
-        
-12. Go back to the **Run** method, and add the following source code immediately below the "*inputDocument.videoId ="* line that will call the newly created function to load the Video Processing State.
+23. The resulting **run.csx** file should have the following code:
 
     ```
-        // Load Video Processing State
-        dynamic processingState = await GetVideoProcessingState(input.videoId, log);
-    ```
+    #r "Microsoft.Azure.Documents.Client"
+    #r "Microsoft.Azure.WebJobs.Extensions.DocumentDB"
+    #r "Microsoft.Azure.WebJobs"
+    #r "Microsoft.Azure.WebJobs.Host"
+    #r "Newtonsoft.Json"
 
-13. Next, paste in the following code that checks if an Error Message was returned from the call to the Video Indexer API.
+    using System;
+    using System.Net;
+    using Newtonsoft.Json;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.WebJobs;
 
-    ```
-        if (!string.IsNullOrEmpty(processingState.ErrorType))
-        {
-            log.Error($"{processingState.ErrorType}: {processingState.Message}");
-            return req.CreateResponse(
-                HttpStatusCode.InternalServerError,
-                new { ErrorType = processingState.ErrorType, Message = processingState.Message }
-            );
-        }
-    ```
+    [FunctionName("Function1")]
+    public static async Task<object> Run(Binder binder,
+        HttpRequestMessage req,
+        [DocumentDB(databaseName: "learning", collectionName: "videos", Id = "{documentId}", PartitionKey = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")]  dynamic inputDocument,
+        TraceWriter log)    
+    {
+    // get query string values
+    Input input = new Input
+    {
+        DocumentId = req.GetQueryNameValuePairs().FirstOrDefault(q => string.Compare(q.Key, "documentId", true) == 0).Value,
+        VideoId = req.GetQueryNameValuePairs().FirstOrDefault(q => string.Compare(q.Key, "videoId", true) == 0).Value
+    };
 
-14. Next, paste in the following code that sets the values of the **Processing State** and **Processing Progress** to properties on the **Cosmos DB Document**; as well as logs their values to the Azure Function Logs.
+    // Bind attributes to DocumentDb
+    inputDocument = await binder.BindAsync<Object>(new DocumentDBAttribute("learning", "videos")
+    {
+        ConnectionStringSetting = "contosovideodb_DOCUMENTDB",
+        Id = input.DocumentId,
+        PartitionKey = input.DocumentId
+    });
 
-    ```
-        log.Info($"Video Processing State: {processingState.state}");
-        log.Info($"Video Processing Progress: {processingState.videos[0].processingProgress}");
 
-        // Save Video Processing State in Cosmos DB Document
-        inputDocument.processingState = processingState.state;
-        inputDocument.processingProgress = processingState.videos[0].processingProgress;
+    // Save the Video Indexer 'videoId' to the Cosmos DB Document
+    inputDocument.videoId = input.VideoId;
 
-    ```
-
-15. The final **Run** method, should have the following:
-
-    ```
-       [FunctionName("Function1")]
-        public static async Task<object> Run(
-            [HttpTrigger]Input input,
-            HttpRequestMessage req,
-            [DocumentDB(databaseName: "learning", collectionName: "videos", Id = "{documentId}", PartitionKey = "{documentId}", ConnectionStringSetting = "contosovideodb_DOCUMENTDB")]  dynamic inputDocument,
-            TraceWriter log)
-        {
-            log.Info("Function triggered...");
-
-            // Log the parameters passed in through the Request Body
-            log.Info($"DocumentId: {input.documentId}");
-            log.Info($"VideoId: {input.videoId}");
-
-            if (string.IsNullOrEmpty(input.videoId) || string.IsNullOrEmpty(input.documentId))
-            {
-                log.Error("DocumentId and/or VideoId parameter missing!");
-                return req.CreateResponse(HttpStatusCode.BadRequest, $"Please pass a 'videoId' and 'documentId' in the Http request body");
-            }
-
-            // Save the Video Indexer 'videoId' to the Cosmos DB Document
-            inputDocument.videoId = input.videoId;
-
-            // Load Video Processing State
-            dynamic processingState = await GetVideoProcessingState(input.videoId, log);
-            if (!string.IsNullOrEmpty(processingState.ErrorType))
-            {
-                log.Error($"{processingState.ErrorType}: {processingState.Message}");
-                return req.CreateResponse(
-                    HttpStatusCode.InternalServerError,
-                    new { ErrorType = processingState.ErrorType, Message = processingState.Message }
-                );
-            }
+    // Load Video Processing State
+    dynamic processingState = await GetVideoProcessingState(input.VideoId, log);
 
             log.Info($"Video Processing State: {processingState.state}");
             log.Info($"Video Processing Progress: {processingState.videos[0].processingProgress}");
@@ -1094,70 +1073,91 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
             inputDocument.processingState = processingState.state;
             inputDocument.processingProgress = processingState.videos[0].processingProgress;
 
-            return req.CreateResponse(HttpStatusCode.OK, "Success");
-        }
+            log.Info("Function triggered...");
 
-        private static async Task<VideoProcessingState> GetVideoProcessingState(string videoId, TraceWriter log)
+        // Log the parameters passed in through the Request Body
+        log.Info($"DocumentId: {input.DocumentId}");
+        log.Info($"VideoId: {input.VideoId}");
+
+        if (string.IsNullOrEmpty(input.VideoId) || string.IsNullOrEmpty(input.DocumentId))
         {
-            var client = new HttpClient();
+            log.Error("DocumentId and/or VideoId parameter missing!");
+            return req.CreateResponse(HttpStatusCode.BadRequest, $"Please pass a 'videoId' and 'documentId' in the Http request body");
+        }
+        return req.CreateResponse(HttpStatusCode.OK, "Success");
+    }
+    private static async Task<VideoProcessingState> GetVideoProcessingState(string videoId, TraceWriter log)
+    {
+        var client = new HttpClient();
 
-            // Request headers
-            string subscriptionKey = Environment.GetEnvironmentVariable("VideoIndexerAPI_Key");//System.Configuration.ConfigurationManager.AppSettings["VideoIndexerAPI_Key"];
-            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+        // Request headers
+        string subscriptionKey = Environment.GetEnvironmentVariable("VideoIndexerAPI_Key");//System.Configuration.ConfigurationManager.AppSettings["VideoIndexerAPI_Key"];
+           log.Info($"Video Index API Keys: {subscriptionKey}");
+        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
-            // Get Video Indexer Account ID
-            var uriAccountsResponse = await client.GetAsync("https://api.videoindexer.ai/auth/trial/Accounts?generateAccessTokens=true&allowEdit=true");
-            var jsonUriAccountsResponse = await uriAccountsResponse.Content.ReadAsStringAsync();
-            dynamic accounts = Newtonsoft.Json.Linq.JArray.Parse(jsonUriAccountsResponse);
-            var videoIndexerAccountId = accounts[0].id;
-            var accessToken = accounts[0].accessToken;
+        // Get Video Indexer Account ID
+        var uriAccountsResponse = await client.GetAsync("https://api.videoindexer.ai/auth/trial/Accounts?generateAccessTokens=true&allowEdit=true");
+        var jsonUriAccountsResponse = await uriAccountsResponse.Content.ReadAsStringAsync();
+        dynamic accounts = Newtonsoft.Json.Linq.JArray.Parse(jsonUriAccountsResponse);
+        var videoIndexerAccountId = accounts[0].id;
+        var accessToken = accounts[0].accessToken;
 
-            //Get Video Index
-            client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
-            var uri = $"https://api.videoindexer.ai/trial/Accounts/{videoIndexerAccountId}/Videos/{videoId}/Index?accessToken={accessToken}";
+        //Get Video Index
+        client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+        var uri = $"https://api.videoindexer.ai/trial/Accounts/{videoIndexerAccountId}/Videos/{videoId}/Index?accessToken={accessToken}";
 
-            var response = await client.GetAsync(uri);
+        var response = await client.GetAsync(uri);
 
-            var content = await response.Content.ReadAsStringAsync();
+        var content = await response.Content.ReadAsStringAsync();
 
-            log.Info($"Processing State JSON: {content}");
+        log.Info($"Processing State JSON: {content}");
 
             return JsonConvert.DeserializeObject<VideoProcessingState>(content);
+       }
+
+    public class Input
+    {
+        public string DocumentId { get; set; }
+        public string VideoId { get; set; }
+    }
+    
+    public class VideoProcessingState
+    {
+        public string state { get; set; }
+
+        public string ErrorType { get; set; }
+
+        public string Message {get; set;}
+
+        public videostate[] videos { get; set; }
+
+        public class videostate
+        {
+            public string processingProgress { get; set; }
         }
-
+    }
     ```
+22. Save the changes.
 
-16. Save the file.
+23. Open the **Azure Portal**, and navigate to the **Cosmos DB Account** that was previously created.
 
-17. Within **Solution Explorer**, right-click the **Function App** project, then choose **Publish...**
-
-    ![The Function App project is selected, highlighted, and labeled 1 in Solution Explorer, and Publish is selected, highlighted, and labeled 2 in the shortcut menu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image122.png "Select Publish")
-
-18. Choose **Publish** to publish the latest version of the Function App to Azure.
-
-    ![The Publish button is highlighted next to the latest version of the Function App.](images/Hands-onlabstep-by-step-MediaAIimages/media/image123.png "Publish the latest version of the Function App")
-
-19. Wait for the Publish to complete. This should take about 1 minute.
-
-20. Open the **Azure Portal**, and navigate to the **Cosmos DB Account** that was previously created.
-
-21. On the **Cosmos DB Account** blade, choose **Keys**.
+24. On the **Cosmos DB Account** blade, choose **Keys**.
 
     ![Keys is highlighted on the Cosmos DB Account blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image124.png "Select Keys")
 
-22. Copy the **PRIMARY CONNECTION STRING** for the Cosmos DB Account.
+25. Copy the **PRIMARY CONNECTION STRING** for the Cosmos DB Account.
 
     ![The PRIMARY CONNECTION STRING value for the Cosmos DB Account is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/image125.png "Copy the PRIMARY CONNECTION STRING")
 
-23. Navigate to the **ContosoVideo** Resource Group, then navigate to the **Azure Function** that was created and published from Visual Studio.
+26. Navigate to the **ContosoVideo** Resource Group, then navigate to the **Azure Function** that was created and published from Visual Studio.
 
-    ![Overview is selected on the left side of the ContosoVideo Resource Group, and the Azure Function that was created and published from Visual Studio is highlighted on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image126.png "Select the Azure Function")
+    ![Overview is selected on the left side of the ContosoVideo Resource Group, and the Azure Function that was created in Azure Portal is highlighted on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/_2_.png "Select the Azure Function")
 
-24. On the **Azure Function** blade, choose **Application settings** under the Configured features section.
+27. On the **Azure Function** blade, choose **Application settings** under the Configured features section.
 
     ![Application settings is highlighted in the Configured features section of the Azure Function blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image127.png "Select Application settings")
 
-25. Scroll down, and add a new **Application setting** with the following values:
+28. Scroll down, and add a new **Application setting** with the following values:
 
     - Name: **contosovideodb\_DOCUMENTDB**
 
@@ -1165,7 +1165,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ![The values above are highlighted under Application settings.](images/Hands-onlabstep-by-step-MediaAIimages/media/image128.png "Add a new Application setting")
 
-26. Add another **Application setting** with the following values:
+29. Add another **Application setting** with the following values:
 
     - Name: **VideoIndexerAPI\_Key**
 
@@ -1173,7 +1173,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ![The values above are displayed under Application settings.](images/Hands-onlabstep-by-step-MediaAIimages/media/image129.png "Add another Application setting")
 
-27. Go back up and select **Save**.
+30. Go back up and select **Save**.
 
     ![This is a screenshot of the Save icon.](images/Hands-onlabstep-by-step-MediaAIimages/media/image130.png "Select Save")
 

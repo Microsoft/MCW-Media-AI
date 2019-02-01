@@ -1,0 +1,33 @@
+﻿@model ContosoLearning.Web.Public.Models.HomeVideoModel
+@{
+    ViewBag.Title = Model.Video.Title;
+}
+
+
+@if (Model.Video == null)
+{
+    <h3>Video Asset Not Found.</h3>
+}
+else
+{
+    <div class="jumbotron">
+        <h1>@(Model.Video.Title)</h1>
+        <p class="lead">@(Model.Video.Description)</p>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            <iframe width="560" height="315" src="https://www.videoindexer.ai/embed/player/@(Model.AccountId)/@(Model.Video.VideoId)?accessToken=@(Model.AccessToken)" frameborder="0" allowfullscreen></iframe>
+
+        </div>
+        <div class="col-lg-6">
+
+            <iframe style="width: 100%; height: 60em;" src="https://www.videoindexer.ai/embed/insights/@(Model.AccountId)/@(Model.Video.VideoId)?accessToken=@(Model.AccessToken)" frameborder="0" allowfullscreen="true"></iframe>
+
+        </div>
+
+    </div>
+
+}
+<script src="https://breakdown.blob.core.windows.net/public/vb.widgets.mediator.js"></script>
