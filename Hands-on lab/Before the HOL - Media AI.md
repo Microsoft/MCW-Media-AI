@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2018 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -42,7 +42,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Requirements
 
--   Microsoft Azure subscription <http://azure.microsoft.com/en-us/pricing/free-trial/>
+-   Microsoft Azure subscription: <http://azure.microsoft.com/en-us/pricing/free-trial/>
 
 -   Local machine or Azure virtual machine configured with:
 
@@ -69,7 +69,7 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
 
 ### Task 2: Disable IE enhanced security
 
-> Note: Sometimes this image has IE ESC disabled, and sometimes it does not.
+> **Note**: Sometimes this image has IE ESC disabled, and sometimes it does not.
 
 1.  On the new VM, you just created click the Server Manager icon.
 
