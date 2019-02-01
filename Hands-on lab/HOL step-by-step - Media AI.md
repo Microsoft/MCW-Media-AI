@@ -206,33 +206,30 @@ In this exercise, you will set the import workflow for uploading and importing v
 
 ### Task 2: Create Azure Logic App to process videos
 
-1. Open **Visual Studio 2017**.
+1. Open a browser window and login to the Azure Portal: <http://portal.azure.com>.
 
-2. Choose the **File** menu, then **Project...**
+2. In the menu, select **Create a resource** > **Web** > **Logic App**.
 
-    ![File is highlighted and labeled 1 in Visual Studio 2017; New is selected, highlighted, and labeled 2 in the submenu; and Project is selected, highlighted, and labeled 3 in the submenu to the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image34.png "Create a new project in Visual Studio 2017")
+3. On the **Create Logic App** blade, enter the following values:
 
-3. On the **New Project** dialog, select the **Cloud** category on the left, then select the **Azure Resource Group** project template, then choose **OK**.
+    - Name: **enter a unique name**
+    - Resource group: **ContosoVideo**
+    - Location: **choose the location closest to you**
+    - Log Analytics: **Off**
 
-    ![Cloud is highlighted and labeled 1 on the left side of the new project dialog box; the Azure Resource Group project template is selected, highlighted, and labeled 2 in the middle; and OK is highlighted and labeled 3 at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image35.png "Select the Azure Resource Group project template")
+    ![Create Logic App fields are filled out.](images/Hands-onlabstep-by-step-MediaAIimages/media/image34.png "Create Logic App fields are filled out.")
 
-4. In the **Select Azure Template** dialog box, type **Logic** into the Search box to filter the available templates, then select the **Logic App** template, then choose **OK**.
+4. Click **Create**.
 
-    ![Logic is entered in the search box and is labeled 1 on the left side of the Select Azure Template dialog box; the Logic App template is selected, highlighted, and labeled 2 below; and OK is highlighted and labeled 3 at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image36.png "Select the Logic App template")
+5. In the menu, choose **Resource groups**, then select the **ContosoVideo** Resource group, then pick the **Logic App** that was just created.
 
-5. Within the **Solution Explorer** pane, right-click on the **LogicApp.json** file, then choose **Open With Logic App Designer**.
+6. The **Logic Apps Designer** should open automatically. If it doesn't, click to open the Logic Apps Designer.
 
-    ![LogicApp.json is selected, highlighted, and labeled 1 in the Solution Explorer pane, and Open With Logic App Designer is selected, highlighted, and labeled 2 in the shortcut menu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image37.png "Open the LogicApp.json file with Logic App Designer")
+7. Scroll down and select the **Blank Logic App** template.
 
-6. On the **Logic App Properties** dialog, sign into your Microsoft or Organization Account associated with your Azure Subscription, then select the **ContosoVideo** Resource Group what was created previously, then choose **OK**.
+    ![Blank Logic App template is highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/image35.png "Blank Logic App template is highlighted")
 
-    ![Microsoft account is highlighted and labeled 1 in the Logic App Properties dialog box; ContosoVideo is highlighted under Resource Group and is labeled 2 below; and OK is highlighted and labeled 3 at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image38.png "Select the ContosoVideo Resource Group")
-
-7. Within the Logic App Editor, scroll down and choose the **Blank Logic App** template.
-
-    ![The Blank Logic App template is highlighted in the Logic App Editor.](images/Hands-onlabstep-by-step-MediaAIimages/media/image39.png "Select the Blank Logic App template")
-
-8. In the **Logic App Designer**, start building out the Logic App Workflow by searching for and adding the **Azure Blob Storage -- When a blob is added or modified (properties only)** Trigger.
+8. Start building out the Logic App Workflow by searching for and adding the **Azure Blob Storage - When a blob is added or modified (properties only)** trigger.
 
     ![Blob storage is entered in the search box of Logic App Designer, and the Azure Blob Storage -- When a blob is added or modified (properties only) trigger is highlighted and labeled 2 below.](images/Hands-onlabstep-by-step-MediaAIimages/media/image40.png "Add the Azure Blob Storage trigger")
 
@@ -250,9 +247,9 @@ In this exercise, you will set the import workflow for uploading and importing v
 
     ![The values above are highlighted on the Blob Storage trigger.](images/Hands-onlabstep-by-step-MediaAIimages/media/image42.png "Configure the Blob Storage trigger")
 
-11. Choose **+New step**, then select **Add an action** to add another action to the workflow.
+11. Select **+New step**.
 
-    ![+New is highlighted, and Add an action is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/image43.png "Add another action to the workflow")
+    ![+New step button is shown.](images/Hands-onlabstep-by-step-MediaAIimages/media/image43.png "+New step button is shown.")
 
 12. Search for and add the **Azure Blob Storage -- Create SAS URI by path** action.
 
@@ -262,15 +259,15 @@ In this exercise, you will set the import workflow for uploading and importing v
 
     ![Path is highlighted in the Blob path box, and the Path parameter is highlighted among the displayed options.](images/Hands-onlabstep-by-step-MediaAIimages/media/image45.png "Select the Path parameter")
 
-14. Choose **+ New step**, **Add an action**, and a new **Video Indexer** then **Get Account Access Token** Action.
+14. Choose **+ New step**, and a new **Video Indexer** then **Get Account Access Token** Action.
 
     ![Get account access token is entered in the search box in the choose an action dialog box, and Video Indexer -- get account access token is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/logicapps-action-video-indexer-get-account-access-token-select.png "Select the Video Indexer get account access token action")
 
-15. For Connection Name, enter **contosovideo-videoindexconnection** , for API Ksy, enter the API key from when the video index account was set up. Then click **Create**.
+15. For Connection Name, enter **contosovideo-videoindexconnection** , for API Key, enter the API key from when the video index account was set up. Then click **Create**.
 
     ![Get account access token is entered in the search box in the choose an action dialog box, and Video Indexer -- get account access token is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/video_indexer_api_key.png "Select the Video Indexer get account access token action")
 
-16. Enter the following values for the *Video Indexer -- Get account access token** Action:
+16. Enter the following values for the **Video Indexer -- Get account access token** Action:
 
     - Location: **trial**
     - Account ID: **Select your Video Indexer Account ID from the dropdown.**
@@ -278,7 +275,7 @@ In this exercise, you will set the import workflow for uploading and importing v
 
     ![Get account access token connector has properties configured.](images/Hands-onlabstep-by-step-MediaAIimages/media/logicapps-action-video-indexer-get-account-access-token-fields.png "Get access token connector has properties configured.")
 
-17. Choose **+New step**, **Add an action**, and a new **Video Indexer -- Upload video and index (using a URL)** Action.
+17. Choose **+New step**, and select the **Video Indexer -- Upload video and index (using a URL)** Action.
 
     ![Upload video and index is entered in the search box in the choose an action dialog box, and Video Indexer -- upload video and index (using a URL) is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/image46.png "Select the Video Indexer and upload video and index (using a URL) action")
 
@@ -302,33 +299,9 @@ In this exercise, you will set the import workflow for uploading and importing v
 
     ![The Save icon is selected.](images/Hands-onlabstep-by-step-MediaAIimages/media/image51.png "Save the Logic App")
 
-20. Within the **Solution Explorer** pane, right-click the **Resource Group Project**, choose **Deploy**, then select the **ContosoVideo** deployment.
+20. Click the **Run** button to start the Logic App.
 
-    ![The Resource Group Project is selected, highlighted, and labeled 1 in the Solution Explorer pane; Deploy is selected, highlighted, and labeled 2 in the shortcut menu; and ContosoVideo is selected, highlighted, and labeled 3 in the submenu.](images/Hands-onlabstep-by-step-MediaAIimages/media/image52.png "Select the ContosoVideo deployment")
-
-21. On the **Deploy to Resource Group** dialog, choose **Edit Parameters...**
-
-    ![The Edit Parameters button is highlighted in the Deploy to Resource Group dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image53.png "Select Edit Parameters")
-
-22. On the **Edit Parameters** dialog, enter the following values, then select **Save**:
-
-    - logicAppName: **enter a unique name for the Logic App**
-
-    - azureblob\_1\_accessKey: **paste in the Key 1 that was copied from the Storage Account previously**
-
-    - videoindexer-v2\_1\_api\_key: **paste in the API Key for the Video Indexer service**
-
-    - **Check** the box for "Save passwords as plain text in the parameters file"
-
-    ![The values above are highlighted in the Edit Parameters dialog box, and save is highlighted at the bottom.](images/Hands-onlabstep-by-step-MediaAIimages/media/image54.png "Edit the parameters")
-
-23. On the **Deploy to Resource Group** dialog, choose **Deploy**.
-
-    ![The Deploy button is highlighted in the Deploy to Resource Group dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image55.png "Select Deploy")
-
-24. Monitor the **Output** window, and wait for the deployment to complete.
-
-    ![Successfully deployed is highlighted in the Output window.](images/Hands-onlabstep-by-step-MediaAIimages/media/image56.png "Watch the output window")
+    ![The Run icon is selected.](images/Hands-onlabstep-by-step-MediaAIimages/media/image52.png "Run the Logic App")
 
 ## Exercise 3: Enable admin website to upload videos
 
@@ -799,8 +772,6 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 1.  Open **Visual Studio 2017**.
 
 2.  Select the **File** menu, then **Project...**
- 
-    ![File is highlighted and labeled 1 in Visual Studio 2017; New is selected, highlighted, and labeled 2 in the submenu; and Project is selected, highlighted, and labeled 3 in the submenu to the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image34.png "Create a new project in Visual Studio 2017")
 
 3.  On the **New Project** dialog, select the **Cloud** category underneath **Visual C\#**, then select the **Azure Function** project template, then choose **OK**.
  
@@ -1179,33 +1150,29 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
 ### Step 3: Update Video State when processing is complete
 
-1.  Open the **Logic App** within Visual Studio that was previously created.
+1. Open the **Logic App Designer** within the Azure Portal for the Logic App that was previously created.
 
-2.  Locate the end of the Workflow, after the **Video Indexer -- Upload video and index (using a URL)** action.
+2. Locate the end of the Workflow, after the **Video Indexer -- Upload video and index (using a URL)** action.
 
     ![+ New step is visible under the Video Indexer -- Upload video and index (using a URL) action at the end of the Workflow.](images/Hands-onlabstep-by-step-MediaAIimages/media/image131.png "Locate the end of the Workflow")
 
-3.  Select **+New step**
+3. Select **+New step**
 
     ![+ New step is highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/newstep.png "Select Add a do until")
 
-4.  Select **Control**
-
-    ![Control button is highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/Control.png "Select Add a do until")
-
-5.  Select **Until**. This will be used to periodically check the video processing state, and wait until it's finished before moving on with the workflow.
+4. Search for and select the **Until** under the **Control** category of actions. This will be used to periodically check the video processing state, and wait until it's finished before moving on with the workflow.
 
     ![Until button is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/Control-Until.png "Select Add a do until")
 
-6.  Within the **Until** action, choose the **Add an action** link to add an action within the "until" block.
+5. Within the **Until** action, choose the **Add an action** link to add an action within the "until" block.
 
     ![Add an action is highlighted at the bottom of the Until dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image133.png "Select Add an action")
 
-7.  Search for and add a **Video Indexer -- Get Video Index** action.
+6. Search for and add a **Video Indexer -- Get Video Index** action.
 
     ![Get processing state is highlighted in the search box of the Choose an action dialog box, and the Video Indexer -- Get Video Index action is highlighted under Actions.](images/Hands-onlabstep-by-step-MediaAIimages/media/image134.png "Add a Video Indexer. Get processing state action")
 
-8.  On the **Get Video Index** action, enter the following values:
+7. On the **Get Video Index** action, enter the following values:
 
     - Location: **trial**
     - Account ID: **Select your Video Indexer Account ID**.
@@ -1217,31 +1184,27 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ![Set the Access Token parameter equal to the value of the Access Token returned by the Get Account Access Token action](images/Hands-onlabstep-by-step-MediaAIimages/media/image182.png "Enter the Access Token parameter value")
 
-9.  At the top of the **Until** action, set the check condition to look at the **State** parameter from the **Get Video Index** action and compare that it **is equal to** the value of **Processed**.
+8. At the top of the **Until** action, set the check condition to look at the **State** parameter from the **Get Video Index** action and compare that it **is equal to** the value of **Processed**.
 
     ![The values above are displayed on the Until action.](images/Hands-onlabstep-by-step-MediaAIimages/media/image136.png "Configure Until action settings")
 
     ![The values above are displayed on the Until action.](images/Hands-onlabstep-by-step-MediaAIimages/media/image183.png "State is equal to Processed")
 
-10. Choose **Add an action** to add another action within the **Until** action, after the **Get processing state** action.
+9. Choose **Add an action** to add another action within the **Until** action, after the **Get processing state** action.
 
     ![Add an action is highlighted at the bottom of the Until dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image137.png "Select Add an action")
 
     > NOTE: The Processing State is being polled here so it can easily be added to the database so the percentage complete can be displayed to the end-user within the web app more easily. Without this feature, the best practice would be to configure a callback with the initial Video Indexer call, so it can asynchronously notify when processing is completed.
 
-11. Choose **Azure Functions Connector**.
+10. Select the **Choose an Azure function** action of the **Azure Functions** Connector.
 
     ![The Azure Functions icon is highlighted under Connectors in the Choose an action dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image138.png "Select the Azure Functions Connector")
 
-12. Choose the **Azure Functions** action for the Azure Functions that was previously created.
-
-    ![Azure Functions is highlighted under Actions in the Azure Functions dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image139.png "Select the Azure Functions Action")
-
-13. For the Azure Functions action, select the **Azure Function** name that was created previously.
+11. For the Azure Functions action, select the **Azure Function** name that was created previously.
 
     ![Azure Functions is highlighted under Actions in the Azure Functions dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image140.png "Select the Azure Functions name")
 
-14. Update the **Request Body** field for the Azure Functions Action to contain a JSON object that includes **documentId** and **videoId** values.
+12. Update the **Request Body** field for the Azure Functions Action to contain a JSON object that includes **documentId** and **videoId** values.
 
     ```
     {"documentId": "", "videoId": "" }
@@ -1249,7 +1212,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ![The values above are in the Request Body box for the Azure Functions Action.](images/Hands-onlabstep-by-step-MediaAIimages/media/image141.png "Update the Request Body box")
 
-15. Modify the JSON properties to have the following values. Also, be sure to remove the empty double quotes ("") from the JSON when adding the new property values as shown below.
+13. Modify the JSON properties to have the following values. Also, be sure to remove the empty double quotes `""` from the JSON when adding the new property values as shown below.
 
     - Set the **documentId** property to the **Name** parameter from the **Blob Storage -- When one or more blobs are added or modified (metadata only)** action.
 
@@ -1259,19 +1222,19 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ![The Video Id parameter of the documentId property is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/image143.png "Select the Video Id parameter")
 
-16. Choose **Add an action** to add another action within the **Until** action, after the Azure Functions Action.
+14. Choose **Add an action** to add another action within the **Until** action, after the Azure Functions Action.
 
     ![Add an action is highlighted at the bottom of the Until dialog box.](images/Hands-onlabstep-by-step-MediaAIimages/media/image144.png "Select Add an action")
 
-17. Search for **delay** and select the **Schedule** action.
+15. Search for **delay** and select the **Schedule** action.
 
     ![Delay is entered in the search box in the Choose an action dialog box, and Schedule -- Schedule is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/Schedule.png "Add the Schedule: Delay action")
 
-18. Search for and add a **Schedule -- Delay** action.
+16. Search for and add a **Schedule -- Delay** action.
 
     ![Delay is highlighted below.](images/Hands-onlabstep-by-step-MediaAIimages/media/Delay.png "Add the Schedule: Delay action")
 
-19. On the **Delay** action, enter the following values:
+17. On the **Delay** action, enter the following values:
 
     - Count: **30**
 
@@ -1279,17 +1242,17 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     ![The values above are highlighted on the Delay action.](images/Hands-onlabstep-by-step-MediaAIimages/media/image146.png "Configure Delay action settings")
 
-20. Scroll down to the bottom or end of the Logic App Workflow, and choose **+New step**, then select **Add an action**.
+18. Scroll down to the bottom or end of the Logic App Workflow, and choose **+New step**, then select **Add an action**.
 
     ![+ New step is highlighted at the end of the Logic App Workflow](images/Hands-onlabstep-by-step-MediaAIimages/media/image147.png "New Step")
 
-21. Add another **Azure Functions Action** here that is configured identical to the one previously created within the **Until** loop action. The reason for this is the first one within the **Until** action will periodically update the status of the Video Processing within the Cosmos DB document with each iteration of the loop. This new Azure Function at the end of the Logic App Workflow will update the Video Processing State one final time before the Workflow finished execution.
+19. Add another **Azure Functions Action** here that is configured identical to the one previously created within the **Until** loop action. The reason for this is the first one within the **Until** action will periodically update the status of the Video Processing within the Cosmos DB document with each iteration of the loop. This new Azure Function at the end of the Logic App Workflow will update the Video Processing State one final time before the Workflow finished execution.
 
     ![Azure Function Action is shown](images/Hands-onlabstep-by-step-MediaAIimages/media/function2.png "Azure Function")
 
-22. **Save** the Logic App.
+20. **Save** the Logic App.
 
-23. **Deploy** the updated Logic App to Azure.
+21. Click **Run** to run the Logic App.
 
 ## Exercise 5: Add video player to front-end application
 
