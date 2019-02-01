@@ -216,7 +216,7 @@ In this exercise, you will set the import workflow for uploading and importing v
     - Location: **choose the location closest to you**
     - Log Analytics: **Off**
 
-    ![Create Logic App fields are filled out.](images/Hands-onlabstep-by-step-MediaAIimages/media/image34.png "Create Logic App fields are filled out.")
+    ![Create Logic App fields are filled out.](images/Hands-onlabstep-by-step-MediaAIimages/media/image-new-logic-app.png "Create Logic App fields are filled out.")
 
 4. Click **Create**.
 
