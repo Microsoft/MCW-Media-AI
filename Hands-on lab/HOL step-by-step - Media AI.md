@@ -1124,7 +1124,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
 26. Navigate to the **ContosoVideo** Resource Group, then navigate to the **Azure Function** that was created and published from Visual Studio.
 
-    ![Overview is selected on the left side of the ContosoVideo Resource Group, and the Azure Function that was created in Azure Portal is highlighted on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/126_2.png "Select the Azure Function")
+    ![Overview is selected on the left side of the ContosoVideo Resource Group, and the Azure Function that was created in Azure Portal is highlighted on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image126_2.png "Select the Azure Function")
 
 27. On the **Azure Function** blade, choose **Application settings** under the Configured features section.
 
