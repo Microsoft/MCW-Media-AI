@@ -708,7 +708,7 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
 
     ![Access keys is selected on the left side of the Storage account blade, and the Connection String value for Key 1 is highlighted on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image92.png "Copy the Connection String for Key 1")
 
-7. Select **Resource groups** in the menu, then choose the **ContosoVideo** Resource Group, then select **Azure Web App.
+7. Select **Resource groups** in the menu, then choose the **ContosoVideo** Resource Group, then select **Azure Web App**.
 
     ![Resource groups is highlighted and labeled 1 in the navigation pane of the Azure portal; the ContosoVideo Resource Group is selected, highlighted, and labeled 2 in the middle; and the Azure Web App is highlighted and labeled 3 on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image93.png "Select the Azure Web App")
 
