@@ -1184,7 +1184,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
     - Access Token: select the **Access Token** value from the **Get Account Access Token** action.
 
-    ![Set the Access Token parameter equal to the value of the Access Token returned by the Get Account Access Token action](images/Hands-onlabstep-by-step-MediaAIimages/media/image182.png "Enter the Access Token parameter value")
+    ![The Get Video Index action has all it's properties set as described in this step.](images/Hands-onlabstep-by-step-MediaAIimages/media/image-get-video-index-proeprties-set.png "The Get Video Index action has all it's properties set as described in this step.")
 
 8. At the top of the **Until** action, set the check condition to look at the **State** parameter from the **Get Video Index** action and compare that it **is equal to** the value of **Processed**.
 
