@@ -770,7 +770,6 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
 1.  Open **Azure Portal**.
 
-<<<<<<< HEAD
 2.  Select the **Create a Resource**, **Compute** then **Function App**
  
     ![Create Resource, Compute, and Function app are highlighted and numbered.](images/Hands-onlabstep-by-step-MediaAIimages/media/image34.png "Create a new function in Azure Portal")
@@ -780,9 +779,6 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
     2.  Resource Group: **Use existing** then select **ContosoVideo**
     3.  Location: Use the **same location** as the other apps.
     4.  Storage: **Use existing**and select **contosovideostorage**
-=======
-2.  Select the **File** menu, then **Project...**
->>>>>>> upstream/jan-2019-update
 
     click **Create**
  
