@@ -782,7 +782,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
     - App Name: **contosovideofunction** 
     - Resource Group: **Use existing** then select **ContosoVideo**
     - Location: Use the **same location** as the other apps.
-    - Storage: **Use existing**and select **contosovideostorage**
+    - Storage: **Use existing** and select **contosovideostorage**
 
     Click **Create**.
  
@@ -907,7 +907,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
     
     ![function.json highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/open_csharp_code.png "CLick the function.json")
 
-19. Update signature of the **Run** method to contain an **binder** parameter of type **Binder**. This also adds the **DocumentDb** attributes to the binding we just added in the **JSON** file. **Binding** will allow the Azure Function to bind the DocumentDb document with incoming values amd update the status of the process from Video Indexer.
+19. Update signature of the **Run** method to contain a **binder** parameter of type **Binder**. This also adds the **DocumentDb** attributes to the binding we just added in the **JSON** file. **Binding** will allow the Azure Function to bind the DocumentDb document with incoming values and update the status of the process from Video Indexer.
 
     >**Note**: The first 2 parameters of the **DocumentDB** attribute define to connect to the "*videos*" Cosmos DB Collection within the "*learning*" database. And the value of "*{documentId}*" will enable it to retrieve the Document whose ID is set to the same value of the "*documentId*" value passed into the method via the HTTP call. The "*ConnectionStringSetting"* parameter sets the name of the App Setting that will store the Cosmos DB Connection String.
     
@@ -1496,7 +1496,7 @@ In this exercise, you will test out the admin and public web applications.
 
     ![The Title, Description, and Video fields and the Upload Video button are highlighted on the Add Course page.](images/Hands-onlabstep-by-step-MediaAIimages/media/image169.png "Upload a video file")
 
-    > Note: Uploading the video file may take a few minutes depending on your Internet connection.
+    > **Note**: Uploading the video file may take a few minutes depending on your Internet connection.
 
 4.  Once the video file has been uploaded, the homepage of the admin app will load displaying the Video Processing State and Progress.
 
