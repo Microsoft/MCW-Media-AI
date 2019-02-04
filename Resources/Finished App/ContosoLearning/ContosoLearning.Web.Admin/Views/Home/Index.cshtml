@@ -1,0 +1,59 @@
+﻿@model ContosoLearning.Web.Admin.Models.HomeIndexModel
+@{
+    ViewBag.Title = "Contoso Learning Admin";
+}
+
+<div class="jumbotron">
+    <h1>@(ViewBag.Title)</h1>
+</div>
+
+<h3>Video Catalog:</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Created (UTC)</th>
+            <th>State</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.HasVideos)
+        {
+            <tr>
+                <th colspan="3">
+                    <strong>No courses have been created yet. Please click @(Html.ActionLink("Add Video", "Upload")) to begin.</strong>
+                </th>
+            </tr>
+        }
+        else
+        {
+            foreach (var video in Model.Videos)
+            {
+                <tr>
+                    <td>@video.Title</td>
+                    <td>@(video.Description)</td>
+                    <td>@(video.Created.ToShortDateString()) @(video.Created.ToLongTimeString())</td>
+                    <td>
+                        @if (video.IsProcessing())
+                        {
+                            <text>
+                            @(video.ProcessingState) (@(video.ProcessingProgress))
+                            </text>
+                        } else
+                        {
+                            <text>Processed</text>
+}
+                    </td>
+                    <td>
+                        @if (!video.IsProcessing())
+                        {
+                            @Html.ActionLink("Delete", "Delete", new { id = video.Id }, new { @class = "btn btn-danger" })
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

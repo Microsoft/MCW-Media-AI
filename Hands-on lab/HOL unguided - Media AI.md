@@ -9,7 +9,7 @@ Hands-on lab unguided
 </div>
 
 <div class="MCWHeader3">
-August 2018
+January 2019
 </div>
 
 
@@ -428,4 +428,3 @@ Duration: 10 minutes
 1.  Now that the hands-on lab is complete, go ahead and delete all the Resource Groups that were created for this lab. You will no longer need those resources and it will be beneficial to clean up your Azure Subscription.
 
 You should follow all steps provided *after* attending the Hands-on lab.
-

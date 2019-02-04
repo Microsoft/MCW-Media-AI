@@ -1,0 +1,45 @@
+﻿@model ContosoLearning.Web.Public.Models.HomeIndexModel
+@{
+    ViewBag.Title = "Contoso Learning";
+}
+
+<div class="jumbotron">
+    <h1>@(ViewBag.Title)</h1>
+    <p class="lead">At Contoso Learning you learn from the best!</p>
+</div>
+
+<h3>Video Catalog:</h3>
+<div class="album">
+    <div class="container">
+        @if (!Model.HasVideos)
+        {
+            <h3>No Videos have been uploaded yet. Please come back later, or contact support.</h3>
+        }
+        else
+        {
+            <div class="row">
+                @foreach (var video in Model.Videos)
+                {
+                    <text>
+                        <div class="card col-md-4 col-sm-6">
+                            <a href="@(Url.Action("Video", new { id = video.Video.Id }))">
+                                <img src="@(string.IsNullOrWhiteSpace(video.ThumbnailUrl) ? Url.Content("~/Content/Blank-Thumbnail.png") : video.ThumbnailUrl)" />
+                            </a>
+                            <h3>@Html.ActionLink(video.Video.Title, "Video", new { id = video.Video.Id })</h3>
+                            <p class="card-text">@video.Video.Description</p>
+
+                            @if (video.Video.IsProcessing())
+                            {
+                                <div class="processing"></div>
+                                <div class="processing-text">
+                                    @(video.Video.ProcessingState) (@(video.Video.ProcessingProgress))<br/>
+                                    <progress value="@(video.Video.ProcessingProgress.Replace("%",string.Empty))" max="100">@(video.Video.ProcessingProgress)</progress>
+                                </div>
+                            }
+                        </div>
+                    </text>
+                }
+            </div>
+        }
+    </div>
+</div>

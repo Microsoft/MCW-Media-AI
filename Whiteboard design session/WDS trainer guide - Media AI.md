@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-August 2018
+January 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2018 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -170,23 +170,23 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 #  Media AI whiteboard design session student guide
 
-## Abstract and learning objectives 
+## Abstract and learning objectives
 
 In this whiteboard design session, you will work in a group to look at the various options and services available to you in Azure to design a video based learning solution that supports uploading and playback of videos, as well as using the more advanced AI capabilities of the platform.
 
 By the end of the whiteboard design session you will be better able to design media applications including setup of the Video Indexer API, upload videos to Blob Storage to be encoded with Azure Video Indexer, and integrate Video Indexer through Logic Apps and Azure Functions.
 
-## Step 1: Review the customer case study 
+## Step 1: Review the customer case study
 
-**Outcome** 
+**Outcome**
 
 Analyze your customer’s needs.
 
-Timeframe: 15 minutes 
+Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips. 
+Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
 1.  Meet your table participants and trainer. 
-2.  Read all of the directions for steps 1–3 in the student guide. 
+2.  Read all of the directions for steps 1–3 in the student guide.
 3.  As a table team, review the following customer case study.
 
 ### Customer situation
@@ -201,7 +201,7 @@ Because of this changing landscape of getting further into the IT training busin
 
 Mary Bowman, the Director of IT Operations for Contoso, has seen some demos of the media and video services within the Microsoft Azure platform. However, she still has several questions to answer before making a final decision on the technology and platforms to use for implementation. The Contoso IT Development and Engineering teams do not have much experience with building and maintaining video streaming services, so they are a bit uncertain of what path to take with the design and architecture at this point. In initial conversations with the sales team, Mary has said, "We have a tremendous amount of Enterprise IT experience within our organization, we just need a little help figuring out the unknowns here."
 
-### Customer needs 
+### Customer needs
 
 1.  The system must scale globally for their many clients all over the world, including new clients as Contoso grows their IT training business.
 
@@ -439,4 +439,3 @@ The following High-Level Diagram displays the overall, general architecture of t
 "Your expertise, along with the proposed solution architecture, really fills in the gaps to help us build the on-demand video training service that will help our company grow to new heights!"
 
 \- Mary Bowman, Director of IT Operations
-

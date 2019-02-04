@@ -5,13 +5,12 @@ Media AI
 </div>
 
 <div class="MCWHeader2">
-Before the hands-on lab setup guide    
+Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-August 2018
+January 2019
 </div>
-
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -19,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2018 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -27,9 +26,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Requirements](#requirements)
-- [Before the hands-on lab](#before-the-hands-on-lab)
-    - [Prerequisites](#prerequisites)
+- [Media AI before the hands-on lab setup guide](#media-ai-before-the-hands-on-lab-setup-guide)
+  - [Requirements](#requirements)
+  - [Before the hands-on lab](#before-the-hands-on-lab)
     - [Task 1: Configure a development environment](#task-1-configure-a-development-environment)
     - [Task 2: Disable IE enhanced security](#task-2-disable-ie-enhanced-security)
     - [Task 3: Update Visual Studio Tools for Azure Functions](#task-3-update-visual-studio-tools-for-azure-functions)
@@ -43,7 +42,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Requirements
 
--   Microsoft Azure subscription <http://azure.microsoft.com/en-us/pricing/free-trial/>
+-   Microsoft Azure subscription: <http://azure.microsoft.com/en-us/pricing/free-trial/>
 
 -   Local machine or Azure virtual machine configured with:
 
@@ -70,7 +69,7 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
 
 ### Task 2: Disable IE enhanced security
 
-> Note: Sometimes this image has IE ESC disabled, and sometimes it does not.
+> **Note**: Sometimes this image has IE ESC disabled, and sometimes it does not.
 
 1.  On the new VM, you just created click the Server Manager icon.
 
@@ -107,11 +106,10 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
 2.  In the **Search** box in the upper right of the dialog, type in **Azure Logic Apps** to search for the **Azure Logic Apps Tools for Visual Studio** extension. Then click **Download** on the Extension to install it.
 
     ![Search Results is highlighted on the left side of the Extensions and Updates dialog box, Azure Logic Apps is highlighted on the top right (labeled 1), and the Download button and the Azure Logic Apps Tools for Visual Studio extension (labeled 2) are selected and highlighted in the middle.](images/Setup/image11.png "Download Azure Logic Apps Tools for Visual Studio")
-    
 
 3.  Click **Close** on the **Extensions and Updated** dialog.
 
-![Search Results is highlighted on the left side of the Extensions and Updates dialog box, Azure Logic Apps Tools for Visual Studio is selected in the middle, and Close is highlighted on the bottom right.](images/Setup/image12.png "Close the Extensions and Updated dialog box")
+    ![Search Results is highlighted on the left side of the Extensions and Updates dialog box, Azure Logic Apps Tools for Visual Studio is selected in the middle, and Close is highlighted on the bottom right.](images/Setup/image12.png "Close the Extensions and Updated dialog box")
 
 4.  Close Visual Studio, the pending installation of the Azure Logic Apps Tools for Visual Studio will automatically launch.
 
@@ -146,7 +144,5 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
     b.  Download the support files (.zip format), <https://cloudworkshop.blob.core.windows.net/media-services-and-cdn/Media-Services-Student-Files.zip> to the new folder.
 
     c.  Extract the contents to the same folder.
-    
+
 You should follow all steps provided *before* performing the Hands-on lab.
-
-
