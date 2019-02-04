@@ -1170,7 +1170,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
 4. Search for and select the **Until** under the **Control** category of actions. This will be used to periodically check the video processing state, and wait until it's finished before moving on with the workflow.
 
-    ![Until button is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/Control-Until.png "Select Add a do until")
+    ![Until button is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/control-until.png "Select Add a do until")
 
 5. Within the **Until** action, choose the **Add an action** link to add an action within the "until" block.
 
