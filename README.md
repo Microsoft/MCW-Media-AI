@@ -21,7 +21,7 @@ In this whiteboard design session, you will work in a group to look at the vario
 By the end of the whiteboard design session you will be better able to design media applications including setup of the Video Indexer API, upload videos to Blob Storage to be encoded with Azure Video Indexer, and integrate Video Indexer through Logic Apps and Azure Functions. 
 
 ### Hands-on Lab
-In this hands-on lab, you will build, setup, and configure a Web Application that performs media streaming using Azure Services; including the Video Indexer API. You will also learn how to implement video processing using Logic Apps, Azure Functions, and Video Indexer API to encode and transcribe videos.
+In this hands-on lab, you will build, setup, and configure a Web Application that performs media streaming using Azure Services; including the Video Indexer API. You will also learn how to implement video processing using Logic Apps, Azure Functions, and Video Indexer Application Programming Interface (API) to encode and transcribe videos.
 
 By the end of this hands-on lab you will be better able to build and manages media applications including the setup the Video Indexer API, upload videos to Blob Storage to be encoded with Azure Video Indexer, and integrate Video Indexer through Logic Apps and Azure Functions.
 
