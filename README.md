@@ -37,4 +37,4 @@ App Modernization
 
 
 ## Related references
-- [MCW](https://github.com/Microsoft/MCW)
+- [MCW](https://microsoftcloudworkshop.com/)

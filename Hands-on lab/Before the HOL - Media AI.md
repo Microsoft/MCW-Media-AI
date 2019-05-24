@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-January 2019
+May 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -59,9 +59,9 @@ In this lab, you will create a developer environment and download the required f
 
 If you do not have a machine setup with Visual Studio 2017 Community complete this task.
 
-1.  Create a virtual machine in Azure using the **Visual Studio Community 2017 (latest release) on Windows Server 2016 (x64)** image. This is important as you need to have Visual Studio 2017 version 15.4 or later to complete this lab.
+1.  Create a virtual machine in Azure using the **Visual Studio 2019 Community on Windows Server 2016 (x64)** image. This is important as you need to have Visual Studio 2017 version 15.4 or later to complete this lab.
 
-    ![In this screenshot, visual studio community 2017 is entered in a search box, and the Visual Studio Community 2017 (latest release) on Windows Server 2016 (x64) row is selected and highlighted in the search results.](images/Setup/image3.png "Use the image above to create a virtual machine in Azure")
+    ![In this screenshot, visual studio community is entered in a search box, and the Visual Studio 2019 row is selected and highlighted in the search results.](images/Setup/image3.png "Use the image above to create a virtual machine in Azure")
 
     > It is **highly** recommended to use a DS2_v2 or D2s_v3 instance size for this VM.
 
@@ -71,7 +71,7 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
 
 > **Note**: Sometimes this image has IE ESC disabled, and sometimes it does not.
 
-1.  On the new VM, you just created click the Server Manager icon.
+1.  Connect to the new VM you just created and click the Server Manager icon if it does not open automatically.
 
     ![Server Manager is highlighted on the taskbar.](images/Setup/image4.png "Select Server Manager")
 
@@ -89,17 +89,17 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
 
 ### Task 3: Update Visual Studio Tools for Azure Functions
 
-1.  Open Visual Studio 2017, then click on the **Tools** menu, then click on **Extensions and Updates...**.
+1.  Open Visual Studio 2019, then click on the **Extensions** menu, then click on **Manage Extensions.**.
 
-    ![In Visual Studio 2017, the Tools menu is highlighted and labeled 1, and Extensions and Updates is selected, highlighted, and labeled 2 in the submenu.](images/Setup/image8.png "Select Extensions and Updates")
+    ![In Visual Studio 2019, the Tools menu is highlighted and labeled 1, and Extensions and Updates is selected, highlighted, and labeled 2 in the submenu.](images/Setup/image8.png "Select Extensions and Updates")
 
-1.  On the Extensions and Updates dialog, click on **Updates**, then **Visual Studio Marketplace** on the left side of the dialog, then click on **Update** for the **Azure Functions and Web Jobs Tools** extension to update to the latest version.
+2.  On the Manage Extensions dialog, click on **Updates**, then **Visual Studio Marketplace** on the left side of the dialog. If it's there, click on **Update** for the **Azure Functions and Web Jobs Tools** extension to update to the latest version.
 
     ![Updates (labeled 1) and Visual Studio Marketplace (labeled 2) are highlighted on the left side of the Extensions and Updates dialog box, and the Update button and the Azure Functions and Web Jobs Tools extension (labeled 3) are selected and highlighted on the right.](images/Setup/image9.png "Update Azure Functions and Web Jobs Tools")
 
 ### Task 4: Install Visual Studio Tools for Logic Apps
 
-1.  Within the **Extensions and Updates** dialog within Visual Studio 2017 sill open from the previous task, click on the **Online** category on the left side of the dialog.
+1.  Within the **Extensions and Updates** dialog within Visual Studio 2017 still open from the previous task, click on the **Online** category on the left side of the dialog.
 
     ![Online is highlighted on the left side of the Extensions and Updates dialog box.](images/Setup/image10.png "Select the Online category")
 
@@ -107,7 +107,7 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
 
     ![Search Results is highlighted on the left side of the Extensions and Updates dialog box, Azure Logic Apps is highlighted on the top right (labeled 1), and the Download button and the Azure Logic Apps Tools for Visual Studio extension (labeled 2) are selected and highlighted in the middle.](images/Setup/image11.png "Download Azure Logic Apps Tools for Visual Studio")
 
-3.  Click **Close** on the **Extensions and Updated** dialog.
+3.  Click **Close** on the **Manage Extensions** dialog.
 
     ![Search Results is highlighted on the left side of the Extensions and Updates dialog box, Azure Logic Apps Tools for Visual Studio is selected in the middle, and Close is highlighted on the bottom right.](images/Setup/image12.png "Close the Extensions and Updated dialog box")
 
@@ -129,9 +129,9 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
 
 ### Task 5: Validate connectivity to Azure
 
-1.  From within the virtual machine, Launch Visual Studio 2017 and validate that you can login with your Microsoft Account when prompted.
+1.  From within the virtual machine, Launch Visual Studio 2019 and validate that you can login with your Microsoft Account when prompted.
 
-2.  Validate connectivity to your Azure subscription. Launch Visual Studio, open Server Explorer from the View menu, and ensure that you can connect to your Azure subscription.
+2.  Validate connectivity to your Azure subscription. Launch Visual Studio, open Cloud Explorer from the View menu, and ensure that you can connect to your Azure subscription.
 
     ![An Azure subscription is highlighted in Server Explorer, and the submenu is displayed with an option to connect to your Azure subscription.](images/Setup/image16.png "Validate connectivity")
 
