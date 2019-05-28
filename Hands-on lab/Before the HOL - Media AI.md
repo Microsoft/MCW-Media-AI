@@ -46,7 +46,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 -   Local machine or Azure virtual machine configured with:
 
-    -   Visual Studio 2017 Community Edition or later
+    -   Visual Studio 2019 Community Edition or later
 
 
 ## Before the hands-on lab
@@ -57,9 +57,9 @@ In this lab, you will create a developer environment and download the required f
 
 ### Task 1: Configure a development environment
 
-If you do not have a machine setup with Visual Studio 2017 Community complete this task.
+If you do not have a machine setup with Visual Studio 2019 Community complete this task.
 
-1.  Create a virtual machine in Azure using the **Visual Studio 2019 Community on Windows Server 2016 (x64)** image. This is important as you need to have Visual Studio 2017 version 15.4 or later to complete this lab.
+1.  Create a virtual machine in Azure using the **Visual Studio 2019 Community on Windows Server 2016 (x64)** image. This is important as you need to have Visual Studio 2019 or later to complete this lab.
 
     ![In this screenshot, visual studio community is entered in a search box, and the Visual Studio 2019 row is selected and highlighted in the search results.](images/Setup/image3.png "Use the image above to create a virtual machine in Azure")
 
@@ -99,7 +99,7 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
 
 ### Task 4: Install Visual Studio Tools for Logic Apps
 
-1.  Within the **Extensions and Updates** dialog within Visual Studio 2017 still open from the previous task, click on the **Online** category on the left side of the dialog.
+1.  Within the **Extensions and Updates** dialog within Visual Studio 2019 still open from the previous task, click on the **Online** category on the left side of the dialog.
 
     ![Online is highlighted on the left side of the Extensions and Updates dialog box.](images/Setup/image10.png "Select the Online category")
 
@@ -115,15 +115,15 @@ If you do not have a machine setup with Visual Studio 2017 Community complete th
 
 5.  On the **VSIX Installer** dialog, click on **Modify**.
 
-    ![Modify is highlighted at the bottom of the VSIX Installer dialog box.](images/Setup/image13.png "Select Modify")
+    ![Modify is highlighted at the bottom of the VSIX Installer dialog box.](images/Setup/2019-05-28-14-48-55.png "Select Modify")
 
 6.  Wait for the extension to be installed, this should only take about 1 minute.
 
-    ![A progress bar is displayed in the VSIX Installer dialog box.](images/Setup/image14.png "Wait for the extension to install")
+    ![A progress bar is displayed in the VSIX Installer dialog box.](images/Setup/2019-05-28-14-50-22.png "Wait for the extension to install")
 
 7.  Once installation is complete, click **Close**.
 
-    ![A Modifications Complete message is displayed in the VSIX Installer dialog box.](images/Setup/image15.png "Close the installer")
+    ![A Modifications Complete message is displayed in the VSIX Installer dialog box.](images/Setup/2019-05-28-14-51-28.png "Close the installer")
 
 8.  Restart Visual Studio now that the extension has been installed.
 
