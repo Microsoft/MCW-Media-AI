@@ -86,7 +86,7 @@ Contoso has asked you to build a media streaming service so they can deliver the
 
 -   Local machine or Azure LABVM virtual machine configured with:
 
-    -   Visual Studio 2017 Community Edition or later
+    -   Visual Studio 2019 Community Edition or later
 
 
 ## Exercise 1: Signup for Video Indexer API service
@@ -160,7 +160,7 @@ In this exercise, you will setup the Video Indexer API within Microsoft Azure.
 
 ## Exercise 2: Setup video import workflow
 
-    - Duration: 20 minutes
+Duration: 20 minutes
 
 In this exercise, you will set the import workflow for uploading and importing videos using the Video Indexer API.
 
@@ -366,7 +366,7 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
 
 ### Task 2: Integrate Cosmos DB into admin web app
 
-1. Within the folder where the exercise files have been extracted to, open the **ContosoLearning.sln** solution within Visual Studio 2017.
+1. Within the folder where the exercise files have been extracted to, open the **ContosoLearning.sln** solution within Visual Studio 2019.
 
     ![This PC is selected in the navigation pane of File Explorer and ContosoLearning.sln is highlighted on the right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image63.png "Select the ContosoLearning.sln solution")
 
@@ -481,7 +481,7 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
 
 ### Task 3: Integrate file upload into admin web app
 
-1. Open the **ContosoLearning.sln** solution within Visual Studio 2017.
+1. Open the **ContosoLearning.sln** solution within Visual Studio 2019.
 
 2. Within Solution Explorer, locate and expand the **ContosoLearning.Web.Admin** project.
 
