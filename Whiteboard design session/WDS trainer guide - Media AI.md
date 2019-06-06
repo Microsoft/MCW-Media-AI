@@ -70,7 +70,7 @@ An amazing trainer:
 
 -   Involves the participant in the learning process.
 
--   Manages the learning process (on time, on topic and adjusting to benefit participants).
+-   Manages the learning process (on time, on topic, and adjusting to benefit participants).
 
 -   Ensures individual participant accountability.
 
@@ -138,7 +138,7 @@ Before conducting your first whiteboard design session:
 
 -   Become familiar with all key points and activities.
 
--   Plan the point you want to stress, which questions you want to drive, transitions and be ready to answer questions.
+-   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
 
 -   Prior to the whiteboard design session, discuss the case study to pick up more ideas.
 
@@ -152,9 +152,9 @@ Before conducting your first whiteboard design session:
 
 When participants are doing activities, you can **look ahead to refresh your memory**.
 
--   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback and sharing.
+-   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
 
--   **Add examples, points and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
+-   **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
 
 -   **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
 
@@ -174,7 +174,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 In this whiteboard design session, you will work in a group to look at the various options and services available to you in Azure to design a video-based learning solution that supports uploading and playback of videos, as well as using the more advanced AI capabilities of the platform.
 
-By the end of the whiteboard design session you will be better able to design media applications including setup of the Video Indexer API, upload videos to Blob Storage to be encoded with Azure Video Indexer and integrate Video Indexer through Logic Apps and Azure Functions.
+By the end of the whiteboard design session you will be better able to design media applications including setup of the Video Indexer API, upload videos to Blob Storage to be encoded with Azure Video Indexer, and integrate Video Indexer through Logic Apps and Azure Functions.
 
 ## Step 1: Review the customer case study
 
@@ -349,7 +349,7 @@ Timeframe: 15 minutes
 
     -   Have the customer team provide one objection for the presenting team to respond to.
     
-    -   The presentation, objections and feedback should take no longer than 15 minutes.
+    -   The presentation, objections, and feedback should take no longer than 15 minutes.
     
     -   If needed, the trainer may also provide feedback.
 
@@ -369,7 +369,7 @@ The preferred solution consists of the following high-level components:
 
 1.  Admin website through which videos can be uploaded by Contoso employees.
 
-2.  "Public" or end-user website through which customers of Contoso can watch video courses, including access to Video Insights such as transcriptions, captions and search features.
+2.  "Public" or end-user website through which customers of Contoso can watch video courses, including access to Video Insights such as transcriptions, captions, and search features.
 
 3.  Background processing that is implemented with a serverless architecture using Azure Logic Apps and Azure Functions. This background processing orchestrates the video upload or encoding workflow.
 
