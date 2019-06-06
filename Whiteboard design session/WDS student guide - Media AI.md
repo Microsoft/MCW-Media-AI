@@ -47,7 +47,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 In this whiteboard design session, you will work in a group to look at the various options and services available to you in Azure to design a video-based learning solution that supports uploading and playback of videos, as well as using the more advanced AI capabilities of the platform.
 
-By the end of the whiteboard design session you will be better able to design media applications including setup of the Video Indexer API, upload videos to Blob Storage to be encoded with Azure Video Indexer and integrate Video Indexer through Logic Apps and Azure Functions.
+By the end of the whiteboard design session you will be better able to design media applications including setup of the Video Indexer API, upload videos to Blob Storage to be encoded with Azure Video Indexer, and integrate Video Indexer through Logic Apps and Azure Functions.
 
 ## Step 1: Review the customer case study 
 
