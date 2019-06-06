@@ -70,7 +70,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 In this hands-on lab, you will build, setup and configure a Web Application that performs media streaming using Azure Services; including the Video Indexer API. You will also learn how to implement video processing using Logic Apps, Azure Functions and Video Indexer API to encode and transcribe videos.
 
-At the end of this hands-on lab you will be better able to build and manage media applications including the setup the Video Indexer API, upload videos to Blob Storage to be encoded with Azure Video Indexer and integrate Video Indexer through Logic Apps and Azure Functions.
+By the end of this hands-on lab you will be better able to build and manage media applications including the setup the Video Indexer API, upload videos to Blob Storage to be encoded with Azure Video Indexer, and integrate Video Indexer through Logic Apps and Azure Functions.
 
 ## Overview
 
@@ -122,7 +122,7 @@ In this exercise, you will setup the Video Indexer API within Microsoft Azure.
 
     ![The Authorization link is highlighted under Products.](images/Hands-onlabstep-by-step-MediaAIimages/media/image21.png "Select Authorization")
 
-7. Select the **Product Authorization Subscription** created for you to view the subscription details
+7. Select the **Product Authorization Subscription** created for you to view the subscription details.
 
     ![The Product Authorization Subscription link text is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/image22.png "Product Authorization Subscription")
 
@@ -174,22 +174,23 @@ In this exercise, you will set the import workflow for uploading and importing v
 
 3. On the **Create storage account** blade in the **Basics** tab, enter the following values:
 
-    - Under **Subscription**, locate **Resource group** select **Create new**
+    - Under **Subscription**, locate **Resource group** select **Create new**.
 
     ![The information above is entered and highlighted on the Create storage account blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.1.png "Configure the settings on the Create storage account blade")
 
-    - Name: **enter a unique name**
+    - Name: **Enter a unique name**.
 
     - Replication: **Locally-redundant storage (LRS)**
 
     - Resource Group: **ContosoVideo**
 
-    - Location: **Choose the location closest to you.**
+    - Location: **Choose the location closest to you**.
 
     ![The information above is entered and highlighted on the Create storage account blade, on the Basics tab.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.2.png "Configure the settings on the Create storage account blade, on the Basics tab.")
 
 4. Select **Review + Create**, review the details then select **Create**.
-       ![In the Create Storage blade, the Review + create tab and create button are selected.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.3.png "Review the settings on the Create storage account blade, on the Review + create tab.")
+
+      ![In the Create Storage blade, the Review + create tab and create button are selected.](images/Hands-onlabstep-by-step-MediaAIimages/media/image28.3.png "Review the settings on the Create storage account blade, on the Review + create tab.")
 5. In the menu, choose **Resource groups**, then select the **ContosoVideo** Resource group, then pick the **Storage Account** that was just created.
 
     ![Resource groups is highlighted and labeled 1 in the navigation pane of the Microsoft Azure portal; the ContosoVideo Resource group is selected, highlighted and labeled 2 to the right; Overview is selected to the right; and the Storage Account that was just created is highlighted and labeled 3 on the far right.](images/Hands-onlabstep-by-step-MediaAIimages/media/image29.png "Select the Storage account")
@@ -218,11 +219,11 @@ In this exercise, you will set the import workflow for uploading and importing v
 
 3. On the **Create Logic App** blade, enter the following values:
 
-    - Name: **enter a unique name**
+    - Name: **Enter a unique name**.
     
     - Resource group: **ContosoVideo**
     
-    - Location: **choose the location closest to you**
+    - Location: **Choose the location closest to you**.
     
     - Log Analytics: **Off**
 
@@ -236,7 +237,7 @@ In this exercise, you will set the import workflow for uploading and importing v
 
 7. Scroll down and select the **Blank Logic App** template.
 
-    ![Blank Logic App template is highlighted](images/Hands-onlabstep-by-step-MediaAIimages/media/image35.png "Blank Logic App template is highlighted")
+    ![Blank Logic App template is highlighted.](images/Hands-onlabstep-by-step-MediaAIimages/media/image35.png "Blank Logic App template is highlighted")
 
 8. Start building out the Logic App Workflow by searching for and adding the **Azure Blob Storage - When a blob is added or modified (properties only)** trigger.
 
@@ -279,7 +280,7 @@ In this exercise, you will set the import workflow for uploading and importing v
 16. Enter the following values for the **Video Indexer -- Get account access token** Action:
 
     - Location: **trial**
-    - Account ID: **Select your Video Indexer Account ID from the dropdown.**
+    - Account ID: **Select your Video Indexer Account ID from the dropdown**.
     - Allow Edit: **Yes**
 
     ![Get account access token connector has properties configured.](images/Hands-onlabstep-by-step-MediaAIimages/media/logicapps-action-video-indexer-get-account-access-token-fields.png "Get access token connector has properties configured.")
@@ -326,13 +327,13 @@ In this exercise, you will wire up the Admin website to enable Video Upload func
 
 2. On the **Create Azure Cosmos DB account** blade in the **Basics** tab, enter or confirm the following values:
 
-    - Account Name: **enter a unique name**
+    - Account Name: **Enter a unique name**.
 
     - API: **Core SQL**
 
     - Resource Group: **ContosoVideo**
 
-    - Location: **Choose the same location as previously.**
+    - Location: **Choose the same location as previously**.
   
     ![The values above are highlighted on the Azure Cosmos DB New account blade.](images/Hands-onlabstep-by-step-MediaAIimages/media/image58.png "Configure Azure Cosmos DB New account settings")
 
@@ -784,14 +785,14 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
 
 1.  Open **Azure Portal**.
 
-2.  Select the **Create a Resource**, **Compute** then **Function App**
+2.  Select the **Create a Resource**, **Compute** then **Function App**.
  
     ![Create Resource, Compute and Function app are highlighted and numbered.](images/Hands-onlabstep-by-step-MediaAIimages/media/image34.png "Create a new function in Azure Portal")
 
 3.  On the **Function App Create** dialog, Fill in the following fields.
 
     - App Name: **contosovideofunction** 
-    - Resource Group: **Use existing** then select **ContosoVideo**
+    - Resource Group: **Use existing** then select **ContosoVideo**.
     - Location: Use the **same location** as the other apps.
     - Storage: **Use existing** and select the storage account created earlier in this lab.
 
@@ -964,6 +965,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
     ```
 
 22. Add a helper model class **VideoProcessingState** to get the values from the **Video Indexer** at the very end of the file.
+
     ```
     public class VideoProcessingState
     {
@@ -981,6 +983,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
         }
     }
     ``` 
+
 23. Add a method that uses the VideoProcessingState class and connects to **Video Indexer** just below the **Run** method's ending bracket.
 
     ```
@@ -1013,6 +1016,7 @@ In this exercise, you will integrate an Azure Function with the Logic App Workfl
         return JsonConvert.DeserializeObject<VideoProcessingState>(content);
     }
     ```
+
 24. The resulting **run.csx** file should have the following code:
 
     ```
