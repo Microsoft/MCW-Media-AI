@@ -7,5 +7,3 @@
 
 [HOL step-by-step - Media AI.html](https://cloudworkshop.blob.core.windows.net/media-ai/Hands-on%20lab/HOL%20step-by-step%20-%20Media%20AI.html)
 
-
-
