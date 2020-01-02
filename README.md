@@ -1,6 +1,6 @@
 # Media AI
 
-## This workshop is no longer being maintained and will be archived on December 31, 2019.
+## This workshop is archived and is no longer being maintained. Content is read-only.
 
 Contoso Consulting is a mature consulting firm that has been in the IT Consulting business for over 30 years with clients all over the world. They have a history of mainly specializing in Microsoft technologies, but do have an established practice of offering Linux and OSS based consulting. The company has adapted to the ever-changing landscape of IT for a long time and has been involved in the training and adoption or transition process of many of its clients over the years. In addition to IT consulting services, Contoso provides on-site and video-based training to their larger clients. This involves creating custom training content and course agendas based on the client's needs and project being delivered.
 
